@@ -6,3 +6,6 @@ C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\nunit.framework.xml
 C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.csprojResolveAssemblyReference.cache
 C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.dll
 C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.pdb
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\MyGame.exe
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\SwinGame.dll
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\MyGame.pdb
