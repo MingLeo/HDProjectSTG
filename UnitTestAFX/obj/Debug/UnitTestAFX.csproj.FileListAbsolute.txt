@@ -1,0 +1,8 @@
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\UnitTestAFX.dll
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\UnitTestAFX.pdb
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\nunit.framework.dll
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\bin\Debug\nunit.framework.xml
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.csprojResolveAssemblyReference.cache
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.dll
+C:\Users\leo\Documents\AirForce-X\UnitTestAFX\obj\Debug\UnitTestAFX.pdb
