@@ -56,5 +56,14 @@ namespace UnitTestProject1
             Assert.AreEqual(el.Speed, 30);
             Assert.AreEqual(el.Hp, 30);
         }
+
+        [Test]
+        public void Initiation_EnemyLinear1()
+        {
+            Assert.AreEqual(el.XLocation, 30);
+            Assert.AreEqual(el.YLocation, 30);
+            Assert.AreEqual(el.Speed, 30);
+            Assert.AreEqual(el.Hp, 30);
+        }
     }
 }
