@@ -21,7 +21,14 @@ namespace MyGame
 		//keyboard control
 		public override void Move ()
 		{
-			
+			if (SwinGame.KeyDown (KeyCode.vk_a)&& (XLocation >40)) 
+				XLocation -= Speed;
+			if (SwinGame.KeyDown (KeyCode.vk_d)&& (XLocation <=  200)) 
+				XLocation += Speed;
+			if ((SwinGame.KeyDown (KeyCode.vk_w)&&(YLocation>=40))) 
+				YLocation -= Speed;
+			if ((SwinGame.KeyDown (KeyCode.vk_s) && (YLocation <=760)))
+				YLocation += Speed;
 
 		}
 
