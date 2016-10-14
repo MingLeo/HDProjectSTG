@@ -22,13 +22,40 @@ namespace MyGame
 		public override void Move ()
 		{
 			
+
 		}
 
 		//three types of fire: single bullet, double, and penta
 		//can add more (extension)
 		public override void Fire ()
 		{
-			
+			switch (BulletType) {
+			case 1:
+				if (TimerCount++ == FireRate) {
+					TimerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation, YLocation, BulletSpeed,FirePower));
+				}
+				break;
+
+			case 2:
+				if (TimerCount++ == FireRate) {
+					TimerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 15, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 15, YLocation, BulletSpeed, FirePower));
+				}
+				break;
+
+			case 3:
+				if (TimerCount++ == FireRate) {
+					TimerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation, YLocation - 10, BulletSpeed, FirePower));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 15, YLocation - 5, BulletSpeed, FirePower));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 15, YLocation - 5, BulletSpeed, FirePower));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 25, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 25, YLocation, BulletSpeed, FirePower));
+				}
+				break;
+			}
 		}
 
 

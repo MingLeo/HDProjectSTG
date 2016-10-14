@@ -20,12 +20,38 @@ namespace MyGame
 		//can add more (extension)
 		public override void Fire ()
 		{
-			
+			switch (BulletType) {
+			case 1:
+				if (TimerCount++ >= FireRate) {
+					TimerCount = 0;
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation, BulletSpeed, FirePower));
+				}
+				break;
+
+			case 2:
+				if (TimerCount++ >= FireRate) {
+					TimerCount = 0;
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 15, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 15, YLocation, BulletSpeed, FirePower));
+				}
+				break;
+
+			case 3:
+				if (TimerCount++ >= FireRate) {
+					TimerCount = 0;
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation - 10, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 15, YLocation - 5, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 15, YLocation - 5, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 25, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 25, YLocation, BulletSpeed, FirePower));
+				}
+				break;
+			}
 		}
 
 		//2 different types of moving pattern for 2 types of enemy. Each override both but leave one of them empty
 		public abstract void MovePattern (int aPeriod, int aStartDirection);
-		public abstract void MovePattern (double aCentreX, double aCentreY, double aRadiusX, double aRadiusY);
+		public abstract void MovePattern (double aCentreX, double aCentreY, double aRadiusX, double aRadiusY,int directionX, int directionY);
 
 		//draw the player
 		//size is hardcoded (radius = 20)
