@@ -22,28 +22,27 @@ namespace MyGame
 		{
 			switch (BulletType) {
 			case 1:
-				if (TimerCount++ >= FireRate) {
+				if (TimerCount++ == FireRate) {
 					TimerCount = 0;
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation+ ENEMY_BITMAP_CENTRE_X, BulletSpeed, FirePower, BitmapKind.BulletA));
 				}
 				break;
 
 			case 2:
-				if (TimerCount++ >= FireRate) {
+				if (TimerCount++ == FireRate) {
 					TimerCount = 0;
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 15, YLocation, BulletSpeed, FirePower));
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 15, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation + ENEMY_BITMAP_CENTRE_X + 15, BulletSpeed, FirePower, BitmapKind.BulletB));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation + ENEMY_BITMAP_CENTRE_X - 15, BulletSpeed, FirePower, BitmapKind.BulletB));
 				}
 				break;
 
 			case 3:
-				if (TimerCount++ >= FireRate) {
+				if (TimerCount++ == FireRate) {
 					TimerCount = 0;
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation, YLocation - 10, BulletSpeed, FirePower));
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 15, YLocation - 5, BulletSpeed, FirePower));
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 15, YLocation - 5, BulletSpeed, FirePower));
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation + 25, YLocation, BulletSpeed, FirePower));
-					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 25, YLocation, BulletSpeed, FirePower));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation-10, YLocation+ ENEMY_BITMAP_CENTRE_X, BulletSpeed, FirePower, BitmapKind.BulletC));
+
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 5, YLocation+ ENEMY_BITMAP_CENTRE_X + 25, BulletSpeed, FirePower, BitmapKind.BulletC));
+					InGameBullets.GameEnemyWeapon.Add (new Weapon (XLocation - 5, YLocation + ENEMY_BITMAP_CENTRE_X - 25, BulletSpeed, FirePower, BitmapKind.BulletC));
 				}
 				break;
 			}
@@ -55,12 +54,7 @@ namespace MyGame
 
 		//draw the player
 		//size is hardcoded (radius = 20)
-		public override void Draw (Color aColor)
-		{
 
-			SwinGame.DrawCircle (aColor, (float)XLocation, (float)YLocation, 20);
-		
-		}
 	}
 }
 
