@@ -71,6 +71,8 @@
     <Compile Include="src\Weapon.cs" />
     <Compile Include="src\InGameBullets.cs" />
     <Compile Include="src\FlyingObject.cs" />
+    <Compile Include="src\BitmapKind.cs" />
+    <Compile Include="src\Explosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -161,6 +163,15 @@
     <WinLibraryFiles Include="lib\win\smpeg.dll" />
     <WinLibraryFiles Include="lib\win\swingame.rc" />
     <WinLibraryFiles Include="lib\win\zlib1.dll" />
+    <WinLibraryFiles Include="Resources\images\bullet1.png" />
+    <WinLibraryFiles Include="Resources\images\bullet2.png" />
+    <WinLibraryFiles Include="Resources\images\bullet3.png" />
+    <WinLibraryFiles Include="Resources\images\player.png" />
+    <WinLibraryFiles Include="Resources\images\enemycir.png" />
+    <WinLibraryFiles Include="Resources\images\enemylin.png" />
+    <WinLibraryFiles Include="Resources\images\explosion.png" />
+    <WinLibraryFiles Include="Resources\images\background.png" />
+    <WinLibraryFiles Include="Resources\sounds\bang.wav" />
   </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />

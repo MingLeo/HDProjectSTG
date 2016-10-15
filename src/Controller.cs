@@ -2,25 +2,31 @@
 using System.Collections.Generic;
 using SwinGameSDK;
 
+
 namespace MyGame
 {
 	public class Controller
 	{
 		private int _score;
 		private int _time;
+		private int _whichIsDestroyed=-1;
 		private Timer _timer;
+		private int tempTime;
 		private List<Player> _player;
 		private List<EnemyCircular> _enemiesCircular;
 		private List<EnemyLinear> _enemiesLinear;
+		private List<Explosion> _explosions;
 		private Random _rand;
 		//add player and enemies
 		public Controller ()
 		{
+			LoadResources ();
+
 			_score = 0;
 			_timer = new Timer ();
 			Timer.Start ();
 			_rand = new Random ();
-
+			_explosions = new List<Explosion> ();
 			_player = new List<Player> ();
 
 
@@ -30,65 +36,69 @@ namespace MyGame
 
 		}
 
+		private void LoadResources ()
+		{
+			SwinGame.LoadFont ("arial.ttf", 72);
+			SwinGame.LoadBitmapNamed ("BulletA", "bullet1.png");
+			SwinGame.LoadBitmapNamed ("BulletB", "bullet2.png");
+			SwinGame.LoadBitmapNamed ("BulletC", "bullet3.png");
+			SwinGame.LoadBitmapNamed ("Player", "player.png");
+			SwinGame.LoadBitmapNamed ("EnemyCir", "enemycir.png");
+			SwinGame.LoadBitmapNamed ("EnemyLin", "enemylin.png");
+			SwinGame.LoadBitmapNamed ("Explosion", "explosion.png");
+			SwinGame.LoadBitmapNamed ("Background", "background.png");
+			SwinGame.LoadSoundEffectNamed ("Bang","bang.wav");
+		}
+
+		public static Bitmap GetBitMap(BitmapKind bmb){
+			switch (bmb){
+			case BitmapKind.BulletA:
+				return SwinGame.BitmapNamed ("BulletA");
+			case BitmapKind.BulletB:
+				return SwinGame.BitmapNamed ("BulletB");
+			case BitmapKind.BulletC:
+				return SwinGame.BitmapNamed ("BulletC");
+			case BitmapKind.Player:
+				return SwinGame.BitmapNamed ("Player");
+			case BitmapKind.EnemyCir:
+				return SwinGame.BitmapNamed ("EnemyCir");
+			case BitmapKind.EnemyLin:
+				return SwinGame.BitmapNamed ("EnemyLin");
+			case BitmapKind.Explosion:
+				return SwinGame.BitmapNamed ("Explosion");
+				case BitmapKind.Background:
+				return SwinGame.BitmapNamed ("Background");
+			default:
+				return SwinGame.BitmapNamed ("BulletA");
+			}
+
+		
+		}
+
 		public void DeployedObjects(){
-			Players.Add (new Player (100, 400, 10, 10));
-
-			EnemiesLinear.Add (new EnemyLinear (Rand.Next (500, 1100), Rand.Next (50, 750),2,3));
-			EnemiesLinear.Add (new EnemyLinear (Rand.Next (500, 1100), Rand.Next (50, 750), 2, 3));
-
-			EnemiesCircular.Add (new EnemyCircular (Rand.Next (500, 1100), Rand.Next (50, 750), 5, 5));
-			EnemiesCircular.Add (new EnemyCircular (Rand.Next (500, 1100), Rand.Next (50, 750), 5, 7));
+			
 		}
 
 
 		// add player's and enemies' weapon & moving pattern
 		public void EquipObjects(){
-			Players[0].Equip (1, 40, -5,2);
-
-			EnemiesLinear [0].Equip (2,100, 10, 2);
-			EnemiesLinear [0].MovePattern (Rand.Next (1000, 2000), 1);
-			EnemiesLinear [1].Equip (3, 80, 10, 2);
-			EnemiesLinear [1].MovePattern (Rand.Next (1000, 2000), -1);
-
-			EnemiesCircular [0].Equip (1, 120, 10, 1);
-			EnemiesCircular [0].MovePattern (Rand.Next (500, 1000), Rand.Next (100, 500), 20, 60,1,1);
-			EnemiesCircular [1].Equip (3, 70, 10, 1);
-			EnemiesCircular [1].MovePattern (Rand.Next (60, 900), Rand.Next (200, 400), 10, 50,-1,-1);
+			
 		}
 
 		//draw player, enemies ad bullets
 		public void DrawObjects ()
 		{
-
-			foreach (Player pl in Players)
-				pl.Draw (Color.Red);
-
-			foreach (EnemyLinear ene in EnemiesLinear)
-				ene.Draw (Color.Blue);
-			foreach (EnemyCircular ene in EnemiesCircular)
-				ene.Draw (Color.Green);
-
-			foreach (Weapon pW in InGameBullets.GamePlayerWeapon)
-				pW.Draw (Color.Red);
 			
-			foreach (Weapon eW in InGameBullets.GameEnemyWeapon) 
-				eW.Draw (Color.Black);
+					
+					
+			
 			
 		}
 
 		//let them fire their bullets
 		public void FireObjects ()
 		{
-			foreach (Player pl in Players)
-				pl.Fire ();
-
-			foreach (EnemyLinear eneL in EnemiesLinear) 
-					eneL.Fire ();
-			foreach (EnemyCircular eneC in EnemiesCircular)
-					eneC.Fire ();
-	
-			InGameBullets.MoveBullet ();
-			InGameBullets.CleanBullet ();
+			
 
 		}
 
@@ -104,22 +114,33 @@ namespace MyGame
 			
 			
 		}
-		public void LoadResources ()
-		{
-			
-		}
+
 		public void DrawHUD ()
 		{
 			
+			if (Score <= 0)
+				Score = 0;
+
+			_time = (int)Timer.Ticks / 1000;
+
+			String scoreHUD = "Your score " + Score;
+			SwinGame.DrawText (scoreHUD, Color.Red,"arial.ttf", 20, 20, 20);
+
+			if (Time != 0)
+				tempTime = Time;
+			String timeHUD = "Your time " + tempTime;
+			SwinGame.DrawText (timeHUD, Color.Red,"arial.ttf", 20, 500, 20);
+
+			int tempHP = 0;
+			if (Players.Count != 0) {
+				//tempHP = Players [0].Hp;
+
+			} else tempHP = 0;
+
+			String hpHUD = "Your HP " + tempHP;
+			SwinGame.DrawText (hpHUD, Color.Red,"arial.ttf", 20, 1000, 20);
 		}
 
-		//check collision
-		//maybe a bug here
-		public void CheckCollision ()
-		{
-			//enemies vs player's bullet
-			
-		}
 
 		// check whether their hps < 0
 		public void CheckAlive ()
@@ -133,7 +154,54 @@ namespace MyGame
 
 
 
-		//basic properties
+		public void CheckCollision ()
+		{
+			
+
+		}
+		public void KeyBoardControl(){
+			if (Players.Count != 0) {
+				if (_whichIsDestroyed == 1) {
+					ControlWASD (0);
+				} else if (_whichIsDestroyed == 0) {
+					ControlULDR (0);
+				} else if (_whichIsDestroyed == -1) {
+					ControlWASD (0);
+					ControlULDR (1);
+				}
+			}
+			
+		}
+		public void ControlWASD (int playerNum)
+		{
+
+			if (SwinGame.KeyDown (KeyCode.vk_a) && (Players [playerNum].XLocation > 20))
+				Players [playerNum].ControlDirection = 1;
+			if (SwinGame.KeyDown (KeyCode.vk_d) && (Players [playerNum].XLocation <= 1100))
+				Players [playerNum].ControlDirection = 2;
+			if ((SwinGame.KeyDown (KeyCode.vk_w) && (Players [playerNum].YLocation >= 20)))
+				Players [playerNum].ControlDirection = 3;
+			if ((SwinGame.KeyDown (KeyCode.vk_s) && (Players [playerNum].YLocation <= 700)))
+				Players [playerNum].ControlDirection = 4;
+
+			Players [playerNum].Move ();
+		}
+
+		public void ControlULDR (int playerNum){ 
+			if (SwinGame.KeyDown (KeyCode.vk_LEFT) && (Players [playerNum].XLocation > 20)) 
+				Players [playerNum].ControlDirection = 1;
+			if (SwinGame.KeyDown (KeyCode.vk_RIGHT) && (Players [playerNum].XLocation <= 1100)) 
+				Players [playerNum].ControlDirection = 2;
+				Players [playerNum].Move ();
+			if ((SwinGame.KeyDown (KeyCode.vk_UP) && (Players [playerNum].YLocation >= 20))) 
+				Players [playerNum].ControlDirection = 3;
+				Players [playerNum].Move ();
+			if ((SwinGame.KeyDown (KeyCode.vk_DOWN) && (Players [playerNum].YLocation <= 700))) 
+				Players [playerNum].ControlDirection = 4;
+			Players [playerNum].Move ();
+		}
+
+
 
 
 
@@ -204,6 +272,16 @@ namespace MyGame
 
 			set {
 				_rand = value;
+			}
+		}
+
+		public List<Explosion> Explosions {
+			get {
+				return _explosions;
+			}
+
+			set {
+				_explosions = value;
 			}
 		}
 	}
