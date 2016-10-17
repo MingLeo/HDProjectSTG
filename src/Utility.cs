@@ -12,16 +12,24 @@ namespace MyGame
 
 		public static void DefaultScreen()
 		{
-			
+			SwinGame.OpenGraphicsWindow ("GameMain", 1200, 800);
+			SwinGame.ProcessEvents ();
+			SwinGame.ClearScreen (Color.White);
 		}
 		public static void MenuScreen ()
 		{
-			
+			SwinGame.ProcessEvents ();
+			SwinGame.ClearScreen (Color.White);
+			gameController.DrawMenu ();
+			SwinGame.RefreshScreen (60);
 		}
 
 		public static void EndScreen ()
 		{
-			
+			SwinGame.ProcessEvents ();
+			SwinGame.ClearScreen (Color.White);
+			gameController.DrawResult ();
+			SwinGame.RefreshScreen (60);
 		}
 
 		public static void ClearGame(){
@@ -53,13 +61,21 @@ namespace MyGame
 
 		public static void DrawGame()
 		{
-			
+			SwinGame.ProcessEvents ();
+			SwinGame.ClearScreen (Color.White);
+			gameController.MoveObjects ();
+			gameController.DrawObjects ();
+			gameController.DrawHUD ();
+			gameController.FireObjects ();
 
 		}
 
 		public static bool CheckGameStatus()
 		{
-			
+			gameController.UpdateScore ();
+			gameController.CheckAlive ();
+			bool isEnd = gameController.CheckEndGame ();
+			return isEnd;
 		}
 
 		public static void GameControl()

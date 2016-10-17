@@ -73,6 +73,11 @@
     <Compile Include="src\FlyingObject.cs" />
     <Compile Include="src\BitmapKind.cs" />
     <Compile Include="src\Explosion.cs" />
+    <Compile Include="src\GameState.cs" />
+    <Compile Include="src\ItemFire.cs" />
+    <Compile Include="src\Utility.cs" />
+    <Compile Include="src\IPatternCurve.cs" />
+    <Compile Include="src\IPatternLinear.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -172,6 +177,10 @@
     <WinLibraryFiles Include="Resources\images\explosion.png" />
     <WinLibraryFiles Include="Resources\images\background.png" />
     <WinLibraryFiles Include="Resources\sounds\bang.wav" />
+    <WinLibraryFiles Include="Resources\images\item1.png" />
+    <WinLibraryFiles Include="Resources\images\item2.png" />
+    <WinLibraryFiles Include="Resources\images\item3.png" />
+    <WinLibraryFiles Include="Resources\images\player1.png" />
   </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />

@@ -31,7 +31,21 @@ namespace MyGame
 		/// </summary>
 		public override void Draw ()
 		{
-			
+			switch (_type) 
+			{
+				case 1:
+					SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.ItemFire1), (float)XLocation, (float)YLocation);
+					break;
+				case 2:
+					SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.ItemFire2), (float)XLocation, (float)YLocation);
+					break;
+				case 3:
+					SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.ItemFire3), (float)XLocation, (float)YLocation);
+					break;
+				default:
+					SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.ItemFire1), (float)XLocation, (float)YLocation);
+					break;
+			}
 		}
 
 		public int Type 

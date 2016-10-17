@@ -69,7 +69,8 @@ namespace MyGame
 		/// </summary>
 		public override void Draw ()
 		{
-			
+			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.EnemyCir), (float)XLocation, (float)YLocation);
+		}
 
 	}
 }

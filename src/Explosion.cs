@@ -29,7 +29,8 @@ namespace MyGame
 		/// </summary>
 		public override void Draw ()
 		{
-		
+				SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Explosion), (float)XLocation, (float)YLocation);
+				_elapsedTime++;
 		}
 
 		public int ElapsedTime {

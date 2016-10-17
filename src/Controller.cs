@@ -470,14 +470,29 @@ namespace MyGame
 		/// </summary>
 		public void DrawHUD ()
 		{
-			
+			String txtScore0 = "Player 1 score: " + currentScore0;
+			String txtScore1 = "Player 2 score: " + currentScore1;
+			SwinGame.DrawText (txtScore0, Color.Red, "arial.ttf", 30, 20, 10);
+			SwinGame.DrawText (txtScore1, Color.Red, "arial.ttf", 30, 20, 60);
+
+			String txtHp0 = "Player 1 HP: " + currentHp0;
+			String txtHp1 = "Player 2 HP: " + currentHp1;
+			SwinGame.DrawText (txtHp0, Color.Red, "arial.ttf", 30, 800, 10);
+			SwinGame.DrawText (txtHp1, Color.Red, "arial.ttf", 30, 800, 60);
 		}
 		/// <summary>
 		/// Keeps players' data even they are destroyed.
 		/// </summary>
 		public void UpdateScore ()
 		{
-			
+			if (Player0.Count != 0) {
+				currentScore0 = Player0 [0].Score;
+				currentHp0 = Player0 [0].Hp;
+			}
+			if (Player1.Count != 0) {
+				currentScore1 = Player1 [0].Score;
+				currentHp1 = Player1 [0].Hp;
+			}
 		}
 
 		/// <summary>
@@ -485,14 +500,31 @@ namespace MyGame
 		/// </summary>
 		public void DrawResult ()
 		{
-			
+			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Background), 0, 0);
+			if (CheckGameState () == GameState.BothWin)
+				SwinGame.DrawText ("Both Players Win!", Color.Yellow, "arial.ttf", 72, 250, 250);
+			if (CheckGameState () == GameState.Player0Win)
+				SwinGame.DrawText ("Player 1 Win!", Color.Yellow, "arial.ttf", 72, 300, 250);
+			if (CheckGameState () == GameState.Player1Win)
+				SwinGame.DrawText ("Player 2 Win!", Color.Yellow, "arial.ttf", 72, 300, 250);
+			if (CheckGameState () == GameState.BothLose)
+				SwinGame.DrawText ("Both Players Lose!", Color.Yellow, "arial.ttf", 72, 300, 250);
+
+			SwinGame.DrawText ("GAME OVER!", Color.Red, "arial.ttf", 72, 300, 100);
+			SwinGame.DrawText ("Player 1 Score: " + currentScore0, Color.Blue, "arial.ttf", 48, 320, 400);
+			SwinGame.DrawText ("Player 2 Score: " + currentScore1, Color.Blue, "arial.ttf", 48, 320, 500);
+			SwinGame.DrawText ("Highscore:" + _highscore, Color.Red, "arial.ttf", 60, 350, 600);
+			SwinGame.DrawText ("Press Spacebar to play again!", Color.Red, "arial.ttf", 48, 250, 700);
+		}
 
 		/// <summary>
 		/// Draws the entry menu.
 		/// </summary>
 		public void DrawMenu ()
 		{
-			
+			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Background), 0, 0);
+			SwinGame.DrawText ("Welcome", Color.Red, "arial.ttf", 200, 150, 200);
+			SwinGame.DrawText ("Press Spacebar to play!", Color.Red, "arial.ttf", 60, 250, 700);
 		}
 
 		public List<Player> Player0 

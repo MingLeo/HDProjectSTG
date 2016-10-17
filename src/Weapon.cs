@@ -38,7 +38,7 @@ namespace MyGame
 		/// </summary>
 		public override void Draw ()
 		{
-		
+			SwinGame.DrawBitmap (Controller.GetBitMap (_bulletKind), (float)XLocation, (float)YLocation);
 		}
 
 		/// <summary>
