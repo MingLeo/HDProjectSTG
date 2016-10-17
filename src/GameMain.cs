@@ -5,24 +5,16 @@ namespace MyGame
 {
 	public class GameMain
 	{
+		/// <summary>
+		/// The entry point of the program.
+		/// Draws Menu, Main Gameplay and EndGame layouts
+		/// Press Spacebar to go to next layout.
+		/// </summary>
 		public static void Main ()
 		{
 
-			SwinGame.OpenGraphicsWindow ("GameMain", 600, 800);
 
-			Controller gameController = new Controller ();
-			gameController.EquipObjects ();
 		
-
-			while (false == SwinGame.WindowCloseRequested ()) {
-
-				SwinGame.ProcessEvents ();
-				SwinGame.ClearScreen (Color.White);
-
-
-				SwinGame.RefreshScreen (60);
-
-			}
 		}
 	}
 }

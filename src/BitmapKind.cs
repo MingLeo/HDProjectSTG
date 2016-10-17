@@ -6,12 +6,15 @@ namespace MyGame
 		BulletA,
 		BulletB,
 		BulletC,
-		Player,
+		Player0,
+		Player1,
 		EnemyCir,
 		EnemyLin,
 		Explosion,
-		Background
-
+		Background,
+		ItemFire1,
+		ItemFire2,
+		ItemFire3,
 	}
 }
 
