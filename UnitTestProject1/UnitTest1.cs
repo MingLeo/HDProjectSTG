@@ -21,7 +21,7 @@ namespace UnitTestProject1
         [Test]
         public void Existence_EnemyCircular()
         {
-            Assert.IsNotNull(ec);
+            Assert.IsNull(ec);
         }
 
         [Test]
