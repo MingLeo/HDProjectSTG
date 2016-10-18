@@ -129,8 +129,8 @@ namespace MyGame
 		public int Score 
 		{
 			get {
-				if (_score <= 0)
-					_score = 0;
+				//if (_score <= 0)
+					//_score = 0;
 				return _score;
 			}
 
