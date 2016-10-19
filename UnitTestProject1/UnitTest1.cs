@@ -70,7 +70,14 @@ namespace UnitTestProject1
         public void Initiation_controler()
         {
             Controller c1 = new Controller();
-
         }
+
+        [Test]
+        public void Initiation_InGameBullets()
+        {
+            InGameBullets.MoveBullet();
+            InGameBullets.CleanBullet();
+        }
+
     }
 }
