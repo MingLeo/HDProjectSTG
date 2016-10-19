@@ -65,5 +65,12 @@ namespace UnitTestProject1
             Assert.AreEqual(el.Speed, 30);
             Assert.AreEqual(el.Hp, 30);
         }
+
+        [Test]
+        public void Initiation_controler()
+        {
+            Controller c1 = new Controller();
+
+        }
     }
 }
