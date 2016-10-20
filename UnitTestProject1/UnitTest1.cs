@@ -11,6 +11,8 @@ namespace UnitTestProject1
         Player p = new Player(10, 10, 10, 10, 1);
         EnemyCircular ec = new EnemyCircular(20, 20, 20, 20);
         EnemyLinear el = new EnemyLinear(30, 30, 30, 30);
+        Controller c1 = new Controller();
+
 
         [Test]
         public void Existence_Player()
@@ -69,7 +71,9 @@ namespace UnitTestProject1
         [Test]
         public void Initiation_controler()
         {
-            Controller c1 = new Controller();
+            Console.WriteLine("test");
+            c1.CollisionPlayerVsBullet();
+            
         }
 
         [Test]
