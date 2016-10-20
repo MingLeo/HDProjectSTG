@@ -13,6 +13,11 @@ namespace UnitTestProject1
         EnemyLinear el = new EnemyLinear(30, 30, 30, 30);
         Controller c1 = new Controller();
 
+        [Test]
+        public void Test()
+        {
+            Assert.IsTrue(false);
+        }
 
         [Test]
         public void Existence_Player()
