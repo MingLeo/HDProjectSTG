@@ -9,3 +9,15 @@ C:\Users\leo\Documents\AirForce-X\UnitTestProject1\bin\Debug\nunit.framework.xml
 C:\Users\leo\Documents\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
 C:\Users\leo\Documents\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\leo\Documents\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\MyGame.exe
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\nunit.framework.dll
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\SwinGame.dll
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\MyGame.pdb
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\nunit.framework.xml
+C:\Users\NhNg\AirForce-X\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\NhNg\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\NhNg\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\NhNg\AirForce-X\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
