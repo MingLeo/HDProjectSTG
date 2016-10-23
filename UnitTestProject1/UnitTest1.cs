@@ -12,6 +12,9 @@ namespace UnitTestProject1
         EnemyCircular ec = new EnemyCircular(20, 20, 20, 20);
         EnemyLinear el = new EnemyLinear(30, 30, 30, 30);
         Controller c1 = new Controller();
+        ItemFire i = new ItemFire(1, 1, 1);
+        Explosion espl = new Explosion(1, 1, 1);
+        Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
         public void Test()
