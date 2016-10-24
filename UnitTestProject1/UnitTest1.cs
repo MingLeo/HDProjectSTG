@@ -262,6 +262,34 @@ namespace UnitTestProject1
         }
 
         [Test]
+        public void Test_New_Controller_EnemiesCircular_Count()
+        {
+            Assert.AreEqual(c1.EnemiesCircular.Count, 0);
+            Assert.AreNotEqual(c1.EnemiesCircular.Count, 1);
+        }
+
+        [Test]
+        public void Test_New_Controller_EnemiesLinear_Count()
+        {
+            Assert.AreEqual(c1.EnemiesLinear.Count, 0);
+            Assert.AreNotEqual(c1.EnemiesLinear.Count, 1);
+        }
+
+        [Test]
+        public void Test_New_Controller_Explosions_Count()
+        {
+            Assert.AreEqual(c1.Explosions.Count, 0);
+            Assert.AreNotEqual(c1.Explosions.Count, 1);
+        }
+
+        [Test]
+        public void Test_New_Controller_ItemsF_Count()
+        {
+            Assert.AreEqual(c1.ItemsF.Count, 0);
+            Assert.AreNotEqual(c1.ItemsF.Count, 1);
+        }
+
+        [Test]
         public void Test_Controller_DeployedObjects_Player0()
         {
             Controller c1 = new Controller();
