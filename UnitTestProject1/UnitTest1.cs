@@ -17,6 +17,34 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_InGameBullets_MoveBullet()
+        {
+            Weapon wpn1 = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn2 = new Weapon(2, 2, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn3 = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn4 = new Weapon(2, 2, 1, 1, BitmapKind.BulletA, 1);
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon.Count, 0);
+            InGameBullets.GameEnemyWeapon.Add(wpn1);
+            InGameBullets.GameEnemyWeapon.Add(wpn2);
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon.Count, 2);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 0);
+            InGameBullets.GamePlayerWeapon.Add(wpn3);
+            InGameBullets.GamePlayerWeapon.Add(wpn4);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 2);
+            InGameBullets.MoveBullet();
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon[0].XLocation, 2);
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon[1].XLocation, 1);
+            Assert.AreNotEqual(InGameBullets.GameEnemyWeapon[0].XLocation, 0);
+            Assert.AreNotEqual(InGameBullets.GameEnemyWeapon[1].XLocation, 0);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon[0].XLocation, 2);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon[1].XLocation, 1);
+            Assert.AreNotEqual(InGameBullets.GamePlayerWeapon[0].XLocation, 0);
+            Assert.AreNotEqual(InGameBullets.GamePlayerWeapon[1].XLocation, 0);
+            InGameBullets.GameEnemyWeapon.Clear();
+            InGameBullets.GamePlayerWeapon.Clear();
+        }
+
+        [Test]
         public void Test_New_Explosion_X()
         {
             Assert.AreEqual(1, espl.XLocation);
