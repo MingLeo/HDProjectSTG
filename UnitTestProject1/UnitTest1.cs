@@ -289,6 +289,9 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.ItemsF.Count, 1);
         }
 
+        /// <summary>
+        /// Test Player0, Player1, Enemycircular, Enemylinear, ItemsFire location
+        /// </summary>
         [Test]
         public void Test_Controller_DeployedObjects_Player0()
         {
