@@ -604,83 +604,83 @@ namespace UnitTestProject1
         [Test]
         public void Test_Controller_CheckGameState_BothLose()
         {
-            Controller c1 = new Controller();
-            c1.DeployedObjects();
-            c1.CleanObjects();
-            Assert.AreEqual(c1.CheckGameState(), GameState.BothLose);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothWin);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Continue);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player0Win);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player1Win);
+            Controller nc1 = new Controller();
+            nc1.DeployedObjects();
+            nc1.CleanObjects();
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothWin);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Continue);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player0Win);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player1Win);
+            Assert.AreEqual(nc1.CheckGameState(), GameState.BothLose);
         }
 
         [Test]
         public void Test_Controller_CheckGameState_BothWin()
         {
-            Controller c1 = new Controller();
-            c1.DeployedObjects();
-            c1.EnemiesCircular.Clear();
-            c1.EnemiesLinear.Clear();
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothLose);
-            Assert.AreEqual(c1.CheckGameState(), GameState.BothWin);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Continue);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player0Win);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player1Win);
+            Controller nc1 = new Controller();
+            nc1.DeployedObjects();
+            nc1.EnemiesCircular.Clear();
+            nc1.EnemiesLinear.Clear();
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothLose);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Continue);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player0Win);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player1Win);
+            Assert.AreEqual(nc1.CheckGameState(), GameState.BothWin);
         }
 
         [Test]
         public void Test_Controller_CheckGameState_Player1Win()
         {
-            Controller c1 = new Controller();
-            c1.DeployedObjects();
-            c1.Player0.Clear();
-            c1.EnemiesLinear.Clear();
-            c1.EnemiesCircular.Clear();
-            Assert.AreEqual(c1.Player0.Count, 0);
-            Assert.AreEqual(c1.Player1.Count, 1);
-            Assert.AreEqual(c1.EnemiesLinear.Count, 0);
-            Assert.AreEqual(c1.EnemiesCircular.Count, 0);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothLose);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothWin);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Continue);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player0Win);
-            Assert.AreEqual(c1.CheckGameState(), GameState.Player1Win);
+            Controller nc1 = new Controller();
+            nc1.DeployedObjects();
+            nc1.Player0.Clear();
+            nc1.EnemiesLinear.Clear();
+            nc1.EnemiesCircular.Clear();
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothLose);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothWin);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Continue);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player0Win);
+            Assert.AreEqual(nc1.Player0.Count, 0);
+            Assert.AreEqual(nc1.Player1.Count, 1);
+            Assert.AreEqual(nc1.EnemiesLinear.Count, 0);
+            Assert.AreEqual(nc1.EnemiesCircular.Count, 0);
+            Assert.AreEqual(nc1.CheckGameState(), GameState.Player1Win);
         }
 
         [Test]
         public void Test_Controller_CheckGameState_Player0Win()
         {
-            Controller c1 = new Controller();
-            c1.DeployedObjects();
-            c1.Player1.Clear();
-            c1.EnemiesLinear.Clear();
-            c1.EnemiesCircular.Clear();
-            Assert.AreEqual(c1.Player1.Count, 0);
-            Assert.AreEqual(c1.Player0.Count, 1);
-            Assert.AreEqual(c1.EnemiesLinear.Count, 0);
-            Assert.AreEqual(c1.EnemiesCircular.Count, 0);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothLose);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothWin);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Continue);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player1Win);
-            Assert.AreEqual(c1.CheckGameState(), GameState.Player0Win);
+            Controller nc1 = new Controller();
+            nc1.DeployedObjects();
+            nc1.Player1.Clear();
+            nc1.EnemiesLinear.Clear();
+            nc1.EnemiesCircular.Clear();
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothLose);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothWin);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Continue);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player1Win);
+            Assert.AreEqual(nc1.Player1.Count, 0);
+            Assert.AreEqual(nc1.Player0.Count, 1);
+            Assert.AreEqual(nc1.EnemiesLinear.Count, 0);
+            Assert.AreEqual(nc1.EnemiesCircular.Count, 0);
+            Assert.AreEqual(nc1.CheckGameState(), GameState.Player0Win);
         }
 
         [Test]
         public void Test_Controller_CheckGameState_Continue()
         {
-            Controller c1 = new Controller();
-            c1.DeployedObjects();
-            c1.Player1.Clear();
-            c1.EnemiesCircular.Clear();
-            Assert.AreEqual(c1.Player1.Count, 0);
-            Assert.AreEqual(c1.Player0.Count, 1);
-            Assert.AreEqual(c1.EnemiesCircular.Count, 0);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothLose);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.BothWin);
-            Assert.AreEqual(c1.CheckGameState(), GameState.Continue);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player1Win);
-            Assert.AreNotEqual(c1.CheckGameState(), GameState.Player0Win);
+            Controller nc1 = new Controller();
+            nc1.DeployedObjects();
+            nc1.Player1.Clear();
+            nc1.EnemiesCircular.Clear();
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothLose);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.BothWin);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player1Win);
+            Assert.AreNotEqual(nc1.CheckGameState(), GameState.Player0Win);
+            Assert.AreEqual(nc1.Player1.Count, 0);
+            Assert.AreEqual(nc1.Player0.Count, 1);
+            Assert.AreEqual(nc1.EnemiesCircular.Count, 0);
+            Assert.AreEqual(nc1.CheckGameState(), GameState.Continue);
         }
 
         [Test]

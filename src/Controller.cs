@@ -311,6 +311,7 @@ namespace MyGame
 				}
 			}
 		}
+
 		/// <summary>
 		/// Check for collisions between players and bullets.
 		/// </summary>
@@ -347,6 +348,7 @@ namespace MyGame
 				}
 			}
 		}
+
 		/// <summary>
 		/// Check for collisions between enemies and players.
 		/// </summary>
