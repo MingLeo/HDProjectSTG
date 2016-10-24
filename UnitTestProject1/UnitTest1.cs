@@ -17,6 +17,47 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_InGameBullets_CleanBullets()
+        {
+            Weapon wpn1 = new Weapon(1201, 3, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn2 = new Weapon(-1, 2, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn3 = new Weapon(3, 801, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn4 = new Weapon(2, -1, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn5 = new Weapon(2, 2, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn6 = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
+
+            Weapon wpn7 = new Weapon(1201, 3, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn8 = new Weapon(-1, 2, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn9 = new Weapon(3, 801, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn10 = new Weapon(2, -1, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn11 = new Weapon(2, 2, 1, 1, BitmapKind.BulletA, 1);
+            Weapon wpn12 = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon.Count, 0);
+            InGameBullets.GameEnemyWeapon.Add(wpn1);
+            InGameBullets.GameEnemyWeapon.Add(wpn2);
+            InGameBullets.GameEnemyWeapon.Add(wpn3);
+            InGameBullets.GameEnemyWeapon.Add(wpn4);
+            InGameBullets.GameEnemyWeapon.Add(wpn5);
+            InGameBullets.GameEnemyWeapon.Add(wpn6);
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon.Count, 6);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 0);
+            InGameBullets.GamePlayerWeapon.Add(wpn7);
+            InGameBullets.GamePlayerWeapon.Add(wpn8);
+            InGameBullets.GamePlayerWeapon.Add(wpn9);
+            InGameBullets.GamePlayerWeapon.Add(wpn10);
+            InGameBullets.GamePlayerWeapon.Add(wpn11);
+            InGameBullets.GamePlayerWeapon.Add(wpn12);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 6);
+            InGameBullets.CleanBullet();
+            Assert.AreEqual(InGameBullets.GameEnemyWeapon.Count, 2);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 2);
+            Assert.AreNotEqual(InGameBullets.GameEnemyWeapon.Count, 1);
+            Assert.AreNotEqual(InGameBullets.GamePlayerWeapon.Count, 1);
+            InGameBullets.GameEnemyWeapon.Clear();
+            InGameBullets.GamePlayerWeapon.Clear();
+        }
+
+        [Test]
         public void Test_InGameBullets_MoveBullet()
         {
             Weapon wpn1 = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
