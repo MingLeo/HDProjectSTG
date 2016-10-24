@@ -27,33 +27,32 @@ namespace MyGame
 		private int currentHp0;
 		private int currentHp1;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:MyGame.Controller"/> class.
-		/// </summary>
-		public Controller ()
-		{
- 			_highscore = LoadHighScore ();
-			_rand = new Random ();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:MyGame.Controller"/> class.
+        /// </summary>
+        public Controller()
+        {
+            _highscore = LoadHighScore();
+            _rand = new Random();
 
-			_explosions = new List<Explosion> ();
-			_itemsF = new List<ItemFire> ();
+            _explosions = new List<Explosion>();
+            _itemsF = new List<ItemFire>();
 
-			_player0 = new List<Player> ();
-			_player1 = new List<Player> ();
+            _player0 = new List<Player>();
+            _player1 = new List<Player>();
 
-			_enemiesCircular = new List<EnemyCircular> ();
-			_enemiesLinear = new List<EnemyLinear> ();
-			currentScore0 = 0;
-			currentScore1 = 0;
-			currentHp0 = 0;
-			currentHp1 = 0;
-		}
-
-		/// <summary>
-		/// Deployeds the objects.
-		/// Add 2 players, 3 items and 6 enemies of both kinds.
-		/// </summary>
-		public void DeployedObjects(){
+            _enemiesCircular = new List<EnemyCircular>();
+            _enemiesLinear = new List<EnemyLinear>();
+            CurrentScore0 = 0;
+            CurrentScore1 = 0;
+            CurrentHp0 = 0;
+            CurrentHp1 = 0;
+        }
+        /// <summary>
+        /// Deployeds the objects.
+        /// Add 2 players, 3 items and 6 enemies of both kinds.
+        /// </summary>
+        public void DeployedObjects(){
 			Player0.Add (new Player (100, 200, 10, 5,0));
 			Player1.Add (new Player (100, 600, 10, 5,1));
 
@@ -435,10 +434,10 @@ namespace MyGame
 		/// </summary>
 		public void UpdateHighScore ()
 		{
-			if (currentScore0 >= _highscore)
-				_highscore = currentScore0;
-			if (currentScore1 >= _highscore)
-				_highscore = currentScore1;
+			if (CurrentScore0 >= _highscore)
+				_highscore = CurrentScore0;
+			if (CurrentScore1 >= _highscore)
+				_highscore = CurrentScore1;
 
 			System.IO.StreamWriter file = new System.IO.StreamWriter ("highscore.txt");
 			file.WriteLine (_highscore);
@@ -470,13 +469,13 @@ namespace MyGame
 		/// </summary>
 		public void DrawHUD ()
 		{
-			String txtScore0 = "Player 1 score: " + currentScore0;
-			String txtScore1 = "Player 2 score: " + currentScore1;
+			String txtScore0 = "Player 1 score: " + CurrentScore0;
+			String txtScore1 = "Player 2 score: " + CurrentScore1;
 			SwinGame.DrawText (txtScore0, Color.Red, "arial.ttf", 30, 20, 10);
 			SwinGame.DrawText (txtScore1, Color.Red, "arial.ttf", 30, 20, 60);
 
-			String txtHp0 = "Player 1 HP: " + currentHp0;
-			String txtHp1 = "Player 2 HP: " + currentHp1;
+			String txtHp0 = "Player 1 HP: " + CurrentHp0;
+			String txtHp1 = "Player 2 HP: " + CurrentHp1;
 			SwinGame.DrawText (txtHp0, Color.Red, "arial.ttf", 30, 800, 10);
 			SwinGame.DrawText (txtHp1, Color.Red, "arial.ttf", 30, 800, 60);
 		}
@@ -486,12 +485,12 @@ namespace MyGame
 		public void UpdateScore ()
 		{
 			if (Player0.Count != 0) {
-				currentScore0 = Player0 [0].Score;
-				currentHp0 = Player0 [0].Hp;
+				CurrentScore0 = Player0 [0].Score;
+				CurrentHp0 = Player0 [0].Hp;
 			}
 			if (Player1.Count != 0) {
-				currentScore1 = Player1 [0].Score;
-				currentHp1 = Player1 [0].Hp;
+				CurrentScore1 = Player1 [0].Score;
+				CurrentHp1 = Player1 [0].Hp;
 			}
 		}
 
@@ -511,8 +510,8 @@ namespace MyGame
 				SwinGame.DrawText ("Both Players Lose!", Color.Yellow, "arial.ttf", 72, 300, 250);
 
 			SwinGame.DrawText ("GAME OVER!", Color.Red, "arial.ttf", 72, 300, 100);
-			SwinGame.DrawText ("Player 1 Score: " + currentScore0, Color.Blue, "arial.ttf", 48, 320, 400);
-			SwinGame.DrawText ("Player 2 Score: " + currentScore1, Color.Blue, "arial.ttf", 48, 320, 500);
+			SwinGame.DrawText ("Player 1 Score: " + CurrentScore0, Color.Blue, "arial.ttf", 48, 320, 400);
+			SwinGame.DrawText ("Player 2 Score: " + CurrentScore1, Color.Blue, "arial.ttf", 48, 320, 500);
 			SwinGame.DrawText ("Highscore:" + _highscore, Color.Red, "arial.ttf", 60, 350, 600);
 			SwinGame.DrawText ("Press Spacebar to play again!", Color.Red, "arial.ttf", 48, 250, 700);
 		}
@@ -566,10 +565,63 @@ namespace MyGame
 				return _itemsF;
 			}
 		}
-		/// <summary>
-		/// Loads the resources.
-		/// </summary>
-		public void LoadResources ()
+
+        public int CurrentScore0
+        {
+            get
+            {
+                return currentScore0;
+            }
+
+            set
+            {
+                currentScore0 = value;
+            }
+        }
+
+        public int CurrentScore1
+        {
+            get
+            {
+                return currentScore1;
+            }
+
+            set
+            {
+                currentScore1 = value;
+            }
+        }
+
+        public int CurrentHp0
+        {
+            get
+            {
+                return currentHp0;
+            }
+
+            set
+            {
+                currentHp0 = value;
+            }
+        }
+
+        public int CurrentHp1
+        {
+            get
+            {
+                return currentHp1;
+            }
+
+            set
+            {
+                currentHp1 = value;
+            }
+        }
+
+        /// <summary>
+        /// Loads the resources.
+        /// </summary>
+        public void LoadResources ()
 		{
 			SwinGame.LoadFont ("arial.ttf", 72);
 			SwinGame.LoadBitmapNamed ("BulletA", "bullet1.png");
