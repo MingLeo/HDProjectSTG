@@ -203,25 +203,26 @@ namespace MyGame
 			return GameState.Continue;
 		}
 
-		/// <summary>
-		/// Checks the end game.
-		/// Clears the remaining objects then update highscore.
-		/// </summary>
-		/// <returns><c>true</c>, if GameState is not Continue, <c>false</c> otherwise.</returns>
-		public bool CheckEndGame ()
-		{
-			if (CheckGameState () != GameState.Continue) {
-				ItemsF.Clear ();
-				Explosions.Clear ();
-				EnemiesCircular.Clear ();
-				EnemiesLinear.Clear ();
-				InGameBullets.GameEnemyWeapon.Clear ();
-				InGameBullets.GamePlayerWeapon.Clear ();
-				UpdateHighScore ();
-				return true;
-			}
-			return false;
-		}
+        /// <summary>
+        /// Checks the end game.
+        /// Clears the remaining objects then update highscore.
+        /// </summary>
+        /// <returns><c>true</c>, if GameState is not Continue, <c>false</c> otherwise.</returns>
+        public bool CheckEndGame()
+        {
+            if (CheckGameState() != GameState.Continue)
+            {
+                ItemsF.Clear();
+                Explosions.Clear();
+                EnemiesCircular.Clear();
+                EnemiesLinear.Clear();
+                InGameBullets.GameEnemyWeapon.Clear();
+                InGameBullets.GamePlayerWeapon.Clear();
+                UpdateHighScore();
+                return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// Clears the game.
