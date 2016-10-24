@@ -25,36 +25,36 @@ namespace MyGame
 				InGameBullets.GameEnemyWeapon [i].Move ();
 		}
 
-		/// <summary>
-		/// Cleans the bullet when they are out of screen.
-		/// </summary>
-		public static void CleanBullet ()
-		{
-			for (int i = 0; i < GamePlayerWeapon.Count; i++)
-			{
-				if( (GamePlayerWeapon[i].XLocation < 0 )
-				   ||(GamePlayerWeapon [i].XLocation >1200)
-				   ||(GamePlayerWeapon [i].YLocation < 0)
-				   || (GamePlayerWeapon [i].YLocation > 800))
-				{
-					GamePlayerWeapon.RemoveAt (i);
+        /// <summary>
+        /// Cleans the bullet when they are out of screen.
+        /// </summary>
+        public static void CleanBullet()
+        {
+            for (int i = 0; i < GamePlayerWeapon.Count; i++)
+            {
+                if ((GamePlayerWeapon[i].XLocation < 0)
+                   || (GamePlayerWeapon[i].XLocation > 1200)
+                   || (GamePlayerWeapon[i].YLocation < 0)
+                   || (GamePlayerWeapon[i].YLocation > 800))
+                {
+                    GamePlayerWeapon.RemoveAt(i);
                     --i;
-				}
-			}
-			for (int i = 0; i < GameEnemyWeapon.Count; i++) 
-			{
-				if ((GameEnemyWeapon [i].XLocation < 0)
-				   || (GameEnemyWeapon [i].XLocation > 1200)
-				   || (GameEnemyWeapon [i].YLocation < 0)
-				   || (GameEnemyWeapon [i].YLocation > 800)) 
-				{
-					GameEnemyWeapon.RemoveAt (i);
+                }
+            }
+            for (int i = 0; i < GameEnemyWeapon.Count; i++)
+            {
+                if ((GameEnemyWeapon[i].XLocation < 0)
+                   || (GameEnemyWeapon[i].XLocation > 1200)
+                   || (GameEnemyWeapon[i].YLocation < 0)
+                   || (GameEnemyWeapon[i].YLocation > 800))
+                {
+                    GameEnemyWeapon.RemoveAt(i);
                     --i;
-				}
-			}
-		}
+                }
+            }
+        }
 
-		public static List<Weapon> GamePlayerWeapon 
+        public static List<Weapon> GamePlayerWeapon 
 		{
 			get {
 				return _gamePlayerWeapon;
