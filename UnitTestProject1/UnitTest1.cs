@@ -586,18 +586,19 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.Explosions.Count, 2);
             c1.ItemsF.Add(new ItemFire(1, 1, 1));
             c1.CleanObjects();
-            Assert.AreEqual(c1.Explosions.Count, 0);
-            Assert.AreNotEqual(c1.Explosions.Count, 1);
-            Assert.AreEqual(c1.Player0.Count, 0);
-            Assert.AreNotEqual(c1.Player0.Count, 1);
-            Assert.AreEqual(c1.Player1.Count, 0);
-            Assert.AreNotEqual(c1.Player1.Count, 1);
             Assert.AreEqual(c1.ItemsF.Count, 0);
             Assert.AreNotEqual(c1.ItemsF.Count, 1);
             Assert.AreEqual(c1.EnemiesCircular.Count, 0);
             Assert.AreNotEqual(c1.EnemiesCircular.Count, 1);
             Assert.AreEqual(c1.EnemiesLinear.Count, 0);
             Assert.AreNotEqual(c1.EnemiesLinear.Count, 1);
+            Assert.AreEqual(c1.Explosions.Count, 0);
+            Assert.AreNotEqual(c1.Explosions.Count, 1);
+            Assert.AreEqual(c1.Player0.Count, 0);
+            Assert.AreNotEqual(c1.Player0.Count, 1);
+            Assert.AreEqual(c1.Player1.Count, 0);
+            Assert.AreNotEqual(c1.Player1.Count, 1);
+
         }
 
         [Test]
