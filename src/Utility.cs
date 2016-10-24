@@ -87,14 +87,21 @@ namespace MyGame
 
 		}
 
-		public static bool CheckGameStatus()
-		{
-			GameController.UpdateScore ();
-			GameController.CheckAlive ();
-			bool isEnd = GameController.CheckEndGame ();
-			return isEnd;
-		}
+        /// <summary>
+        /// Return the game status
+        /// </summary>
+        /// <returns></returns>
+        public static bool CheckGameStatus()
+        {
+            GameController.UpdateScore();
+            GameController.CheckAlive();
+            bool isEnd = GameController.CheckEndGame();
+            return isEnd;
+        }
 
+        /// <summary>
+        /// Start game coontrol
+        /// </summary>
 		public static void GameControl()
 		{
 			SwinGame.ProcessEvents ();
