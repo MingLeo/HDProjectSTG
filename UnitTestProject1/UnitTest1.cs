@@ -521,6 +521,7 @@ namespace UnitTestProject1
             Assert.AreEqual(c1.EnemiesCircular.Count, 2);
             Assert.AreNotEqual(c1.EnemiesCircular.Count, 3);
         }
+
         [Test]
         public void Test_Controller_MoveObjects()
         {
@@ -572,6 +573,7 @@ namespace UnitTestProject1
             Assert.AreEqual(c1.EnemiesLinear[2].YLocation, 7);
             Assert.AreNotEqual(c1.EnemiesLinear[2].YLocation, 8);
         }
+
         [Test]
         public void Test_Controller_CleanObjects()
         {

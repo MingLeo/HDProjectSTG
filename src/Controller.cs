@@ -131,19 +131,22 @@ namespace MyGame
 				eneC.Fire (-1);
 		}
 
-		public void MoveObjects ()
-		{
-			InGameBullets.MoveBullet ();
-			InGameBullets.CleanBullet ();
-			foreach (Player p0 in Player0)
-				p0.Move ();
-			foreach (Player p1 in Player1)
-				p1.Move ();
-			foreach (EnemyCircular eneC in EnemiesCircular ) 
-				eneC.Move ();
-			foreach (EnemyLinear eneL in EnemiesLinear)
-				eneL.Move ();
-		}
+        /// <summary>
+        /// Move and clean any moving objects
+        /// </summary>
+        public void MoveObjects()
+        {
+            InGameBullets.MoveBullet();
+            InGameBullets.CleanBullet();
+            foreach (Player p0 in Player0)
+                p0.Move();
+            foreach (Player p1 in Player1)
+                p1.Move();
+            foreach (EnemyCircular eneC in EnemiesCircular)
+                eneC.Move();
+            foreach (EnemyLinear eneL in EnemiesLinear)
+                eneL.Move();
+        }
 
         /// <summary>
         /// Destroyed when its HP is less than 0.
