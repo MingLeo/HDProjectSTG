@@ -17,6 +17,34 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_New_Explosion_X()
+        {
+            Assert.AreEqual(1, espl.XLocation);
+            Assert.AreNotEqual(0, espl.XLocation);
+        }
+
+        [Test]
+        public void Test_New_Explosion_Y()
+        {
+            Assert.AreEqual(1, espl.YLocation);
+            Assert.AreNotEqual(0, espl.YLocation);
+        }
+
+        [Test]
+        public void Test_New_Explosion_Time()
+        {
+            Assert.AreEqual(1, espl.Time);
+            Assert.AreNotEqual(0, espl.Time);
+        }
+
+        [Test]
+        public void Test_New_Explosion_ElapsedTime()
+        {
+            Assert.AreEqual(0, espl.ElapsedTime);
+            Assert.AreNotEqual(1, espl.ElapsedTime);
+        }
+
+        [Test]
         public void Test_IPatternCurve_MovePattern()
         {
             EnemyCircular ec = new EnemyCircular(20, 20, 2, 20);
