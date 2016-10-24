@@ -74,14 +74,12 @@ namespace MyGame
         {
             Player0[0].Equip(0, 40, -5, 1);
             Player1[0].Equip(0, 40, -5, 1);
-
             EnemiesLinear[0].Equip(2, 100, 10, 2);
             EnemiesLinear[0].MovePattern(_rand.Next(60, 200), 1);
             EnemiesLinear[1].Equip(1, 80, 10, 2);
             EnemiesLinear[1].MovePattern(_rand.Next(60, 200), -1);
             EnemiesLinear[2].Equip(3, 80, 10, 2);
             EnemiesLinear[2].MovePattern(_rand.Next(80, 200), 1);
-
             EnemiesCircular[0].Equip(3, 120, 10, 1);
             EnemiesCircular[0].MovePattern(_rand.Next(500, 1000), _rand.Next(100, 500), 20, 70, 1, 1);
             EnemiesCircular[1].Equip(1, 70, 10, 1);
