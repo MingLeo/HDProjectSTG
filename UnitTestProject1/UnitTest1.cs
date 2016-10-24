@@ -58,6 +58,15 @@ namespace UnitTestProject1
         }
 
         [Test]
+        public void Test_Player_Equip_BulletSpeed()
+        {
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.Equip(0, 1, 1, 1);
+            Assert.AreEqual(p1.BulletSpeed, 1);
+            Assert.AreNotEqual(p1.BulletSpeed, 0);
+        }
+
+        [Test]
         public void Test_Player_Equip_FirePower()
         {
             Player p = new Player(5, 5, 5, 5, 1);
