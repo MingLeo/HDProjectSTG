@@ -496,6 +496,10 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.EnemiesCircular[2].FirePower, 2);
         }
 
+        /// <summary>
+        /// Check object's Hp and eliminate whose Hp is 0
+        /// </summary>
+        /// 
         [Test]
         public void Test_Controller_CheckAlive()
         {
