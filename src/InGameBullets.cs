@@ -14,21 +14,20 @@ namespace MyGame
 		private static List<Weapon> _gamePlayerWeapon = new List<Weapon> ();
 		private static List<Weapon> _gameEnemyWeapon = new List<Weapon> ();
 
-		/// <summary>
-		/// Updates the postions of all bullets on the screen.
-		/// </summary>
-		public static void MoveBullet()
-		{
-			for (int i = 0; i < InGameBullets.GamePlayerWeapon.Count; i++)
-				InGameBullets.GamePlayerWeapon [i].Move ();
-			for (int i = 0; i < InGameBullets.GameEnemyWeapon.Count; i++)
-				InGameBullets.GameEnemyWeapon [i].Move ();
-		}
-
-		/// <summary>
-		/// Cleans the bullet when they are out of screen.
-		/// </summary>
-		public static void CleanBullet ()
+        /// <summary>
+        /// Updates the postions of all bullets on the screen.
+        /// </summary>
+        public static void MoveBullet()
+        {
+            for (int i = 0; i < InGameBullets.GamePlayerWeapon.Count; i++)
+                InGameBullets.GamePlayerWeapon[i].Move();
+            for (int i = 0; i < InGameBullets.GameEnemyWeapon.Count; i++)
+                InGameBullets.GameEnemyWeapon[i].Move();
+        }
+        /// <summary>
+        /// Cleans the bullet when they are out of screen.
+        /// </summary>
+        public static void CleanBullet ()
 		{
 			for (int i = 0; i < GamePlayerWeapon.Count; i++)
 			{
