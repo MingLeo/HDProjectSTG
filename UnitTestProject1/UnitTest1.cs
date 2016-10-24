@@ -17,6 +17,22 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_IPatternLinear_MovePattern()
+        {
+            EnemyLinear el = new EnemyLinear(5, 5, 2, 5);
+            el.MovePattern(2, 1);
+            el.Move();
+            Assert.AreEqual(el.XLocation, 7);
+            Assert.AreNotEqual(el.XLocation, 8);
+            el.Move();
+            Assert.AreEqual(el.XLocation, 9);
+            Assert.AreNotEqual(el.XLocation, 8);
+            el.Move();
+            Assert.AreEqual(el.XLocation, 7);
+            Assert.AreNotEqual(el.XLocation, 8);
+        }
+
+        [Test]
         public void Test()
         {
             Assert.IsTrue(true);
