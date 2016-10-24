@@ -120,7 +120,6 @@ namespace MyGame
         public EnemyCircular(double aXLocation, double aYLocation, double aSpeed, int aHp)
             : base(aXLocation, aYLocation, aSpeed, aHp)
         {
-
         }
         /// <summary>
         /// Ship moves on a curve.
