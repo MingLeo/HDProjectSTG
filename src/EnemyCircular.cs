@@ -19,14 +19,105 @@ namespace MyGame
 		private double _directionX;
 		private double _directionY;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:MyGame.EnemyCircular"/> class.
-		/// </summary>
-		/// <param name="aXLocation">Enemy's X Location.</param>
-		/// <param name="aYLocation">Enemy's A Y Location.</param>
-		/// <param name="aSpeed">Enemy's speed.</param>
-		/// <param name="aHp">Enemy's hp.</param>
-		public EnemyCircular (double aXLocation, double aYLocation, double aSpeed, int aHp)
+        public double Angle
+        {
+            get
+            {
+                return _angle;
+            }
+
+            set
+            {
+                _angle = value;
+            }
+        }
+
+        public double CentreX
+        {
+            get
+            {
+                return _centreX;
+            }
+
+            set
+            {
+                _centreX = value;
+            }
+        }
+
+        public double CentreY
+        {
+            get
+            {
+                return _centreY;
+            }
+
+            set
+            {
+                _centreY = value;
+            }
+        }
+
+        public double RadiusY
+        {
+            get
+            {
+                return _radiusY;
+            }
+
+            set
+            {
+                _radiusY = value;
+            }
+        }
+
+        public double RadiusX
+        {
+            get
+            {
+                return _radiusX;
+            }
+
+            set
+            {
+                _radiusX = value;
+            }
+        }
+
+        public double DirectionX
+        {
+            get
+            {
+                return _directionX;
+            }
+
+            set
+            {
+                _directionX = value;
+            }
+        }
+
+        public double DirectionY
+        {
+            get
+            {
+                return _directionY;
+            }
+
+            set
+            {
+                _directionY = value;
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:MyGame.EnemyCircular"/> class.
+        /// </summary>
+        /// <param name="aXLocation">Enemy's X Location.</param>
+        /// <param name="aYLocation">Enemy's A Y Location.</param>
+        /// <param name="aSpeed">Enemy's speed.</param>
+        /// <param name="aHp">Enemy's hp.</param>
+        public EnemyCircular (double aXLocation, double aYLocation, double aSpeed, int aHp)
 			: base (aXLocation, aYLocation, aSpeed, aHp)
 		{
 		}
@@ -42,13 +133,13 @@ namespace MyGame
 		/// <param name="directionY">Vertical Direction.</param>
 		public void MovePattern(double aCentreX, double aCentreY, double aRadiusX, double aRadiusY, int directionX, int directionY)
 		{
-			_angle = 0;
-			_radiusX = aRadiusX;
-			_radiusY = aRadiusY;
-			_centreX = aCentreX;
-			_centreY = aCentreY;
-			_directionX = directionX;
-			_directionY = directionY;
+			Angle = 0;
+			RadiusX = aRadiusX;
+			RadiusY = aRadiusY;
+			CentreX = aCentreX;
+			CentreY = aCentreY;
+			DirectionX = directionX;
+			DirectionY = directionY;
 		}
 
 
@@ -59,9 +150,9 @@ namespace MyGame
 		/// </summary>
 		public override void Move ()
 		{
-			XLocation = _centreX + _directionX *_radiusX * Math.Sin (_angle)*Speed;
-			YLocation = _centreY + _directionY * _radiusY * Math.Cos (_angle)*Speed;
-			_angle += Speed/1000;
+			XLocation = CentreX + DirectionX *RadiusX * Math.Sin (Angle)*Speed;
+			YLocation = CentreY + DirectionY * RadiusY * Math.Cos (Angle)*Speed;
+			Angle += Speed/1000;
 		}
 
 		/// <summary>
