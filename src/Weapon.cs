@@ -39,15 +39,14 @@ namespace MyGame
 			SwinGame.DrawBitmap (Controller.GetBitMap (_bulletKind), (float)XLocation, (float)YLocation);
 		}
 
-		/// <summary>
-		/// Update bullet position.
-		/// </summary>
-		public void Move ()
-		{
-				XLocation -= _speed;
-		}
-
-		public int BulletPower {
+        /// <summary>
+        /// Update bullet position.
+        /// </summary>
+        public void Move()
+        {
+            XLocation -= _speed;
+        }
+        public int BulletPower {
 			get {
 				return _bulletPower;
 			}
