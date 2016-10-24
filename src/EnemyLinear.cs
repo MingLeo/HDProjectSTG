@@ -46,11 +46,9 @@ namespace MyGame
         /// <param name="aYLocation">Enemy's A Y Location.</param>
         /// <param name="aSpeed">Enemy's speed.</param>
         /// <param name="aHp">Enemy's hp.</param>
-        public EnemyLinear (double aXLocation, double aYLocation, double aSpeed, int aHp)
-			: base (aXLocation, aYLocation, aSpeed, aHp)
-		{
-			
-		}
+        public EnemyLinear(double aXLocation, double aYLocation, double aSpeed, int aHp) : base(aXLocation, aYLocation, aSpeed, aHp)
+        {
+        }
         /// <summary>
         /// Ship moves on a straight line.
         /// Interface's method
