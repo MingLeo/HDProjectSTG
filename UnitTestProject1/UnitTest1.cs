@@ -17,6 +17,15 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_Weapon_Move()
+        {
+            Weapon wpn = new Weapon(3, 3, 1, 1, BitmapKind.BulletA, 1);
+            wpn.Move();
+            Assert.AreEqual(wpn.XLocation, 2);
+            Assert.AreNotEqual(wpn.XLocation, 3);
+        }
+
+        [Test]
         public void Test_New_Weapon_X()
         {
             Assert.AreEqual(wp.XLocation, 1);
