@@ -348,10 +348,8 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.EnemiesCircular[0].Speed, 2);
             Assert.AreEqual(c1.EnemiesCircular[0].Hp, 3);
             Assert.AreNotEqual(c1.EnemiesCircular[0].Hp, 4);
-
             Assert.GreaterOrEqual(c1.EnemiesCircular[1].XLocation, 500);
             Assert.GreaterOrEqual(c1.EnemiesCircular[1].YLocation, 50);
-
             Assert.LessOrEqual(c1.EnemiesCircular[1].XLocation, 1100);
             Assert.AreNotEqual(c1.EnemiesCircular[1].XLocation, 499);
             Assert.LessOrEqual(c1.EnemiesCircular[1].YLocation, 750);
@@ -360,10 +358,8 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.EnemiesCircular[1].Speed, 2);
             Assert.AreEqual(c1.EnemiesCircular[1].Hp, 5);
             Assert.AreNotEqual(c1.EnemiesCircular[1].Hp, 4);
-
             Assert.GreaterOrEqual(c1.EnemiesCircular[2].XLocation, 500);
             Assert.GreaterOrEqual(c1.EnemiesCircular[2].YLocation, 50);
-
             Assert.LessOrEqual(c1.EnemiesCircular[2].XLocation, 1100);
             Assert.AreNotEqual(c1.EnemiesCircular[2].XLocation, 499);
             Assert.LessOrEqual(c1.EnemiesCircular[2].YLocation, 750);
@@ -392,7 +388,6 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c2.EnemiesLinear[0].Speed, 2);
             Assert.AreEqual(c2.EnemiesLinear[0].Hp, 3);
             Assert.AreNotEqual(c2.EnemiesLinear[0].Hp, 4);
-
             Assert.LessOrEqual(c2.EnemiesLinear[1].XLocation, 1100);
             Assert.AreNotEqual(c2.EnemiesLinear[1].XLocation, 499);
             Assert.LessOrEqual(c2.EnemiesLinear[1].YLocation, 700);
@@ -401,7 +396,6 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c2.EnemiesLinear[1].Speed, 3);
             Assert.AreEqual(c2.EnemiesLinear[1].Hp, 4);
             Assert.AreNotEqual(c2.EnemiesLinear[1].Hp, 5);
-
             Assert.LessOrEqual(c2.EnemiesLinear[2].XLocation, 1100);
             Assert.AreNotEqual(c2.EnemiesLinear[2].XLocation, 499);
             Assert.LessOrEqual(c2.EnemiesLinear[2].YLocation, 650);
@@ -428,21 +422,18 @@ namespace UnitTestProject1
             Assert.AreNotEqual(c1.ItemsF[0].YLocation, 1);
             Assert.AreEqual(c1.ItemsF[0].Type, 1);
             Assert.AreNotEqual(c1.ItemsF[0].Type, 2);
-
             Assert.LessOrEqual(c1.ItemsF[1].XLocation, 1100);
             Assert.AreNotEqual(c1.ItemsF[1].XLocation, 1);
             Assert.LessOrEqual(c1.ItemsF[1].YLocation, 700);
             Assert.AreNotEqual(c1.ItemsF[1].YLocation, 1);
             Assert.AreEqual(c1.ItemsF[1].Type, 2);
             Assert.AreNotEqual(c1.ItemsF[1].Type, 3);
-
             Assert.LessOrEqual(c1.ItemsF[2].XLocation, 1100);
             Assert.AreNotEqual(c1.ItemsF[2].XLocation, 1);
             Assert.LessOrEqual(c1.ItemsF[2].YLocation, 700);
             Assert.AreNotEqual(c1.ItemsF[2].YLocation, 1);
             Assert.AreEqual(c1.ItemsF[2].Type, 3);
             Assert.AreNotEqual(c1.ItemsF[2].Type, 2);
-
             Assert.GreaterOrEqual(c1.ItemsF[0].XLocation, 400);
             Assert.GreaterOrEqual(c1.ItemsF[0].YLocation, 100);
             Assert.GreaterOrEqual(c1.ItemsF[1].XLocation, 400);
