@@ -222,24 +222,26 @@ namespace MyGame
 			}
 			return false;
 		}
-		/// <summary>
-		/// Clears the game.
-		/// </summary>
-		public void CleanObjects(){
-			Player0.Clear ();
-			Player1.Clear ();
-			Explosions.Clear ();
-			ItemsF.Clear ();
-			EnemiesCircular.Clear ();
-			EnemiesLinear.Clear ();
-			InGameBullets.GameEnemyWeapon.Clear ();
-			InGameBullets.GamePlayerWeapon.Clear ();
-		}
 
-		/// <summary>
-		/// Checks if a player hits an item.
-		/// </summary>
-		public void CheckItemCollsion()
+        /// <summary>
+        /// Clears the game.
+        /// </summary>
+        public void CleanObjects()
+        {
+            Player0.Clear();
+            Player1.Clear();
+            Explosions.Clear();
+            ItemsF.Clear();
+            EnemiesCircular.Clear();
+            EnemiesLinear.Clear();
+            InGameBullets.GameEnemyWeapon.Clear();
+            InGameBullets.GamePlayerWeapon.Clear();
+        }
+
+        /// <summary>
+        /// Checks if a player hits an item.
+        /// </summary>
+        public void CheckItemCollsion()
 		{
 			if (ItemsF.Count != 0){
 				if (Player0.Count != 0){
