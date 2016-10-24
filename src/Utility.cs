@@ -45,8 +45,12 @@ namespace MyGame
 			SwinGame.RefreshScreen (60);
 		}
 
-		public static void ClearGame(){
-			GameController.CleanObjects ();
+        /// <summary>
+        /// Clear all moving objects of the game
+        /// </summary>
+		public static void ClearGame()
+        {
+			GameController.CleanObjects();
 		}
 
 		public static void InitiliseGameController()
