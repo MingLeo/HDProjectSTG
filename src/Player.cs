@@ -52,60 +52,56 @@ namespace MyGame
         /// '0' - Blue. '1' - Red. 
         /// </summary>
         /// <param name="belongTo">Player number, '0' or '1'.</param>
-        public override void Fire (int belongTo)
-		{
-			BitmapKind bmk=BitmapKind.BulletA;
-			if (belongTo == 1)
-				bmk = BitmapKind.BulletB;
-			
-			switch (_bulletType) 
-			{
-			case 0:
-				if (_timerCount++ == FireRate) 
-				{
-					_timerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+PLAYER_BITMAP_CENTRE_X*2, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed,_firePower, bmk, belongTo));
-				}
-				break;
+        public override void Fire(int belongTo)
+        {
+            BitmapKind bmk = BitmapKind.BulletA;
+            if (belongTo == 1) bmk = BitmapKind.BulletB;
+            switch (_bulletType)
+            {
+                case 0:
+                    if (_timerCount++ == FireRate)
+                    {
+                        _timerCount = 0;
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower, bmk, belongTo));
+                    }
+                    break;
+                case 1:
+                    if (_timerCount++ == FireRate)
+                    {
+                        _timerCount = 0;
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y + 15, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y - 15, _bulletSpeed, _firePower, bmk, belongTo));
+                    }
+                    break;
+                case 2:
+                    if (_timerCount++ == FireRate)
+                    {
+                        _timerCount = 0;
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y + 25, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y - 25, _bulletSpeed, _firePower, bmk, belongTo));
+                    }
+                    break;
+                case 3:
+                    if (_timerCount++ == FireRate)
+                    {
+                        _timerCount = 0;
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 10, YLocation + PLAYER_BITMAP_CENTRE_Y + 25, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 10, YLocation + PLAYER_BITMAP_CENTRE_Y - 25, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y + 55, _bulletSpeed, _firePower, bmk, belongTo));
+                        InGameBullets.GamePlayerWeapon.Add(new Weapon(XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y - 55, _bulletSpeed, _firePower, bmk, belongTo));
+                    }
+                    break;
+            }
+        }
 
-			case 1:
-				if (_timerCount++ == FireRate) 
-				{
-					_timerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2, YLocation + PLAYER_BITMAP_CENTRE_Y +15, _bulletSpeed, _firePower,bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2, YLocation + PLAYER_BITMAP_CENTRE_Y -15, _bulletSpeed, _firePower,bmk, belongTo));
-				}
-				break;
-
-			case 2:
-				if (_timerCount++ == FireRate) 
-				{
-					_timerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 +20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower,bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 , YLocation + PLAYER_BITMAP_CENTRE_Y +25, _bulletSpeed, _firePower,bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 , YLocation + PLAYER_BITMAP_CENTRE_Y -25, _bulletSpeed, _firePower,bmk, belongTo));
-				}
-				break;
-			case 3:
-				if (_timerCount++ == FireRate) 
-				{
-					_timerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower, bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2+10, YLocation + PLAYER_BITMAP_CENTRE_Y + 25, _bulletSpeed, _firePower, bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2+10, YLocation + PLAYER_BITMAP_CENTRE_Y - 25, _bulletSpeed, _firePower, bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y + 55, _bulletSpeed, _firePower, bmk, belongTo));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y - 55, _bulletSpeed, _firePower, bmk, belongTo));
-				}
-				break;
-			}
-		}
-
-		/// <summary>
-		/// Draw both players.
-		/// Depends on _playerNum.
-		/// '0' - Blue Ship. '1' - Red Ship.
-		/// </summary>
-		public override void Draw ()
+        /// <summary>
+        /// Draw both players.
+        /// Depends on _playerNum.
+        /// '0' - Blue Ship. '1' - Red Ship.
+        /// </summary>
+        public override void Draw ()
 		{
 			if (_playerNum==0)
 				SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Player0), (float)XLocation, (float)YLocation);
