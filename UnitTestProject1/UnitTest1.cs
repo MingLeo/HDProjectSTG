@@ -16,7 +16,33 @@ namespace UnitTestProject1
         Explosion espl = new Explosion(1, 1, 1);
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
+        [Test]
+        public void Test_New_Player_X()
+        {
+            Assert.AreEqual(p.XLocation, 10);
+            Assert.AreNotEqual(p.XLocation, 11);
+        }
 
+        [Test]
+        public void Test_New_Player_Y()
+        {
+            Assert.AreEqual(p.YLocation, 10);
+            Assert.AreNotEqual(p.YLocation, 11);
+        }
+
+        [Test]
+        public void Test_New_Player_Speed()
+        {
+            Assert.AreEqual(p.Speed, 10);
+            Assert.AreNotEqual(p.Speed, 11);
+        }
+
+        [Test]
+        public void Test_New_Player_Hp()
+        {
+            Assert.AreEqual(p.Hp, 10);
+            Assert.AreNotEqual(p.Hp, 11);
+        }
 
         [Test]
         public void Test_EnemyCircular_Move_X()
