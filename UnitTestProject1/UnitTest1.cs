@@ -17,6 +17,20 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_Player_Fire()
+        {
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 0);
+            Assert.AreNotEqual(InGameBullets.GamePlayerWeapon.Count, 1);
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.Equip(0, 1, 1, 1);
+            p1.Fire(1);
+            Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 0);
+            Assert.AreNotEqual(InGameBullets.GamePlayerWeapon.Count, 1);
+            InGameBullets.GameEnemyWeapon.Clear();
+            InGameBullets.GamePlayerWeapon.Clear();
+        }
+
+        [Test]
         public void Test_Player_MoveLeft()
         {
             Player p1 = new Player(10, 10, 1, 10, 1);
