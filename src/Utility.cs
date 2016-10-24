@@ -90,7 +90,7 @@ namespace MyGame
         /// <summary>
         /// Return the game status
         /// </summary>
-        /// <returns></returns>
+        /// <returns> the game status </returns>
         public static bool CheckGameStatus()
         {
             GameController.UpdateScore();
