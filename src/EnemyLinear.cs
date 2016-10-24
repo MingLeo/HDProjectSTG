@@ -13,14 +13,40 @@ namespace MyGame
 		private int _period;
 		private int _direction;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:MyGame.Enemy"/> class.
-		/// </summary>
-		/// <param name="aXLocation">Enemy's X Location.</param>
-		/// <param name="aYLocation">Enemy's A Y Location.</param>
-		/// <param name="aSpeed">Enemy's speed.</param>
-		/// <param name="aHp">Enemy's hp.</param>
-		public EnemyLinear (double aXLocation, double aYLocation, double aSpeed, int aHp)
+        public int Period
+        {
+            get
+            {
+                return _period;
+            }
+
+            set
+            {
+                _period = value;
+            }
+        }
+
+        public int Direction
+        {
+            get
+            {
+                return _direction;
+            }
+
+            set
+            {
+                _direction = value;
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:MyGame.Enemy"/> class.
+        /// </summary>
+        /// <param name="aXLocation">Enemy's X Location.</param>
+        /// <param name="aYLocation">Enemy's A Y Location.</param>
+        /// <param name="aSpeed">Enemy's speed.</param>
+        /// <param name="aHp">Enemy's hp.</param>
+        public EnemyLinear (double aXLocation, double aYLocation, double aSpeed, int aHp)
 			: base (aXLocation, aYLocation, aSpeed, aHp)
 		{
 			
@@ -33,28 +59,29 @@ namespace MyGame
 		/// <param name="aDirection">Movement direction.</param>
 		public void MovePattern (int aPeriod, int aDirection)
 		{
-			_period = aPeriod;
-			_direction = aDirection;
+			Period = aPeriod;
+			Direction = aDirection;
 		}
 
-		/// <summary>
-		/// Update enemy position.
-		/// Ship patrons periodically on a straight line.
-		/// </summary>
-		public override void Move ()
-		{
-			_timerCount++;
-			if (_timerCount > _period) 
-			{
-				_timerCount = 0;
-				_direction = - _direction;
-			}
-			YLocation += _direction * Speed;
-		}
-		/// <summary>
-		/// Draw this enemy.
-		/// </summary>
-		public override void Draw ()
+        /// <summary>
+        /// Update enemy position.
+        /// Ship patrons periodically on a straight line.
+        /// </summary>
+        public override void Move()
+        {
+            _timerCount++;
+            if (_timerCount > Period)
+            {
+                _timerCount = 0;
+                Direction = -Direction;
+            }
+            YLocation += Direction * Speed;
+            XLocation += Direction * Speed;
+        }
+        /// <summary>
+        /// Draw this enemy.
+        /// </summary>
+        public override void Draw ()
 		{
 			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.EnemyLin), (float)XLocation, (float)YLocation);
 		}
