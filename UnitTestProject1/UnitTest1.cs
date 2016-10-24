@@ -17,6 +17,47 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_Player_MoveLeft()
+        {
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.ControlDirection = 1;
+            p1.Move();
+            Assert.AreEqual(p1.XLocation, 9);
+            Assert.AreNotEqual(p1.XLocation, 10);
+
+        }
+
+        [Test]
+        public void Test_Player_MoveRight()
+        {
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.ControlDirection = 2;
+            p1.Move();
+            Assert.AreEqual(p1.XLocation, 11);
+            Assert.AreNotEqual(p1.XLocation, 10);
+        }
+
+        [Test]
+        public void Test_Player_MoveUp()
+        {
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.ControlDirection = 3;
+            p1.Move();
+            Assert.AreEqual(p1.YLocation, 9);
+            Assert.AreNotEqual(p1.YLocation, 10);
+        }
+
+        [Test]
+        public void Test_Player_MoveDown()
+        {
+            Player p1 = new Player(10, 10, 1, 10, 1);
+            p1.ControlDirection = 4;
+            p1.Move();
+            Assert.AreEqual(p1.YLocation, 11);
+            Assert.AreNotEqual(p1.YLocation, 10);
+        }
+
+        [Test]
         public void Test_Player_Equip_FirePower()
         {
             Player p = new Player(5, 5, 5, 5, 1);
