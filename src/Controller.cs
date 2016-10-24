@@ -149,45 +149,45 @@ namespace MyGame
 				eneL.Move ();
 		}
 
-		/// <summary>
-		/// Destroyed when its HP is less than 0.
-		/// </summary>
-		public void CheckAlive ()
-		{
-			if (Player0.Count != 0) 
-			{
-				if (Player0 [0].Hp <= 0) 
-				{
-					Player0 [0].Score -= 2;
-					Player0.RemoveAt (0);
-				}
-			}
-			if (Player1.Count != 0) {
-				if (Player1 [0].Hp <= 0) 
-				{
-					Player1 [0].Score -= 2;
-					Player1.RemoveAt (0);
-				}
-			}
+        /// <summary>
+        /// Destroyed when its HP is less than 0.
+        /// </summary>
+        public void CheckAlive()
+        {
+            if (Player0.Count != 0)
+            {
+                if (Player0[0].Hp <= 0)
+                {
+                    Player0[0].Score -= 2;
+                    Player0.RemoveAt(0);
+                }
+            }
+            if (Player1.Count != 0)
+            {
+                if (Player1[0].Hp <= 0)
+                {
+                    Player1[0].Score -= 2;
+                    Player1.RemoveAt(0);
+                }
+            }
+            for (int i = 0; i < EnemiesLinear.Count; i++)
+            {
+                if (EnemiesLinear[i].Hp <= 0)
+                    EnemiesLinear.RemoveAt(i);
+            }
+            for (int i = 0; i < EnemiesCircular.Count; i++)
+            {
+                if (EnemiesCircular[i].Hp <= 0)
+                    EnemiesCircular.RemoveAt(i);
+            }
+        }
 
-			for (int i = 0; i < EnemiesLinear.Count;i++)
-			{
-				if (EnemiesLinear [i].Hp <= 0)
-					EnemiesLinear.RemoveAt (i);
-			}
-			for (int i = 0; i < EnemiesCircular.Count; i++) 
-			{
-				if (EnemiesCircular [i].Hp <= 0)
-					EnemiesCircular.RemoveAt (i);
-			}
-		}
-
-		/// <summary>
-		/// Checks if 1 of the players wins or both of them lose or win.
-		/// Otherwise, continue game.
-		/// </summary>
-		/// <returns>The GameState.</returns>
-		public GameState CheckGameState()
+        /// <summary>
+        /// Checks if 1 of the players wins or both of them lose or win.
+        /// Otherwise, continue game.
+        /// </summary>
+        /// <returns>The GameState.</returns>
+        public GameState CheckGameState()
 		{
 			if ((EnemiesCircular.Count == 0) && (EnemiesLinear.Count == 0)) 
 			{
