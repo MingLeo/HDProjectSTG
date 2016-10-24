@@ -66,6 +66,7 @@ namespace MyGame
         /// Update enemy position.
         /// Ship patrons periodically on a straight line.
         /// </summary>
+
         public override void Move()
         {
             _timerCount++;
@@ -77,6 +78,7 @@ namespace MyGame
             YLocation += Direction * Speed;
             XLocation += Direction * Speed;
         }
+
         /// <summary>
         /// Draw this enemy.
         /// </summary>
