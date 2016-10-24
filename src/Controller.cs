@@ -187,21 +187,20 @@ namespace MyGame
         /// </summary>
         /// <returns>The GameState.</returns>
         public GameState CheckGameState()
-		{
-			if ((EnemiesCircular.Count == 0) && (EnemiesLinear.Count == 0)) 
-			{
-				if ((Player0.Count != 0) && (Player1.Count == 0))
-					return GameState.Player0Win;
-				if ((Player0.Count == 0) && (Player1.Count != 0))
-					return GameState.Player1Win;
-				if ((Player0.Count != 0) && (Player1.Count != 0))
-					return GameState.BothWin;
-			} 
-			if ((Player0.Count == 0) && (Player1.Count == 0))
-				return GameState.BothLose;
-
-			return GameState.Continue;
-		}
+        {
+            if ((EnemiesCircular.Count == 0) && (EnemiesLinear.Count == 0))
+            {
+                if ((Player0.Count != 0) && (Player1.Count == 0))
+                    return GameState.Player0Win;
+                if ((Player0.Count == 0) && (Player1.Count != 0))
+                    return GameState.Player1Win;
+                if ((Player0.Count != 0) && (Player1.Count != 0))
+                    return GameState.BothWin;
+            }
+            if ((Player0.Count == 0) && (Player1.Count == 0))
+                return GameState.BothLose;
+            return GameState.Continue;
+        }
 
         /// <summary>
         /// Checks the end game.
