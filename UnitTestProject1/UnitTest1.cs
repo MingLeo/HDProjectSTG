@@ -17,6 +17,50 @@ namespace UnitTestProject1
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
         [Test]
+        public void Test_New_Weapon_X()
+        {
+            Assert.AreEqual(wp.XLocation, 1);
+            Assert.AreNotEqual(wp.XLocation, 2);
+        }
+
+        [Test]
+        public void Test_New_Weapon_Y()
+        {
+            Assert.AreEqual(wp.YLocation, 1);
+            Assert.AreNotEqual(wp.YLocation, 2);
+        }
+
+        [Test]
+        public void Test_New_Weapon_BulletKind()
+        {
+            Assert.AreEqual(wp.BulletKind, BitmapKind.BulletA);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.BulletB);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.BulletC);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.EnemyCir);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.EnemyLin);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.Explosion);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.ItemFire1);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.ItemFire2);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.ItemFire3);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.Player0);
+            Assert.AreNotEqual(wp.BulletKind, BitmapKind.Player1);
+        }
+
+        [Test]
+        public void Test_New_Weapon_BulletPower()
+        {
+            Assert.AreEqual(wp.BulletPower, 1);
+            Assert.AreNotEqual(wp.BulletPower, 2);
+        }
+
+        [Test]
+        public void Test_New_Weapon_BelongTo()
+        {
+            Assert.AreEqual(wp.BelongTo, 1);
+            Assert.AreNotEqual(wp.BelongTo, 2);
+        }
+
+        [Test]
         public void Test_Player_Fire()
         {
             Assert.AreEqual(InGameBullets.GamePlayerWeapon.Count, 0);
@@ -248,75 +292,6 @@ namespace UnitTestProject1
             el.Move();
             Assert.AreEqual(el.XLocation, 7);
             Assert.AreNotEqual(el.XLocation, 8);
-        }
-
-        [Test]
-        public void Existence_Player()
-        {
-            Assert.IsNotNull(p);
-        }
-
-        [Test]
-        public void Existence_EnemyCircular()
-        {
-            Assert.IsNotNull(ec);
-        }
-
-        [Test]
-        public void Existence_EnemyLinear()
-        {
-            Assert.IsNotNull(el);
-        }
-
-        [Test]
-        public void Initiation_Player()
-        {
-            Assert.AreEqual(p.XLocation, 10);
-            Assert.AreEqual(p.YLocation, 10);
-            Assert.AreEqual(p.Speed, 10);
-            Assert.AreEqual(p.Hp, 10);
-        }
-
-        [Test]
-        public void Initiation_EnemyCircular()
-        {
-            Assert.AreEqual(ec.XLocation, 20);
-            Assert.AreEqual(ec.YLocation, 20);
-            Assert.AreEqual(ec.Speed, 20);
-            Assert.AreEqual(ec.Hp, 20);
-        }
-
-        [Test]
-        public void Initiation_EnemyLinear()
-        {
-            Assert.AreEqual(el.XLocation, 30);
-            Assert.AreEqual(el.YLocation, 30);
-            Assert.AreEqual(el.Speed, 30);
-            Assert.AreEqual(el.Hp, 30);
-        }
-
-        [Test]
-        public void Initiation_EnemyLinear1()
-        {
-            Assert.AreEqual(el.XLocation, 30);
-            Assert.AreEqual(el.YLocation, 30);
-            Assert.AreEqual(el.Speed, 30);
-            Assert.AreEqual(el.Hp, 30);
-        }
-
-        [Test]
-        public void Initiation_controler()
-        {
-            Console.WriteLine("test");
-            c1.CollisionPlayerVsBullet();
-            
-        }
-
-        [Test]
-        public void Initiation_InGameBullets()
-        {
-            InGameBullets.MoveBullet();
-            InGameBullets.CleanBullet();
         }
 
     }
