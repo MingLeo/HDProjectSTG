@@ -15,25 +15,24 @@ namespace MyGame
 		private int _score;
 		private int _playerNum;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:MyGame.Player"/> class.
-		/// </summary>
-		/// <param name="aXLocation">Player's X Location.</param>
-		/// <param name="aYLocation">Player's Y Location.</param>
-		/// <param name="aSpeed">Player's speed.</param>
-		/// <param name="aHp">Player's hp.</param>
-		/// <param name="aPlayerNum">Player number '0' or '1'.</param>
-		public Player (double aXLocation, double aYLocation, double aSpeed, int aHp, int aPlayerNum)
-			: base (aXLocation, aYLocation, aSpeed, aHp)
-		{
-			_score = 0;
-			_controlDirection = 0;
-			_playerNum = aPlayerNum;
-		}
-		/// <summary>
-		/// Update players position.
-		/// </summary>
-		public override void Move ()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:MyGame.Player"/> class.
+        /// </summary>
+        /// <param name="aXLocation">Player's X Location.</param>
+        /// <param name="aYLocation">Player's Y Location.</param>
+        /// <param name="aSpeed">Player's speed.</param>
+        /// <param name="aHp">Player's hp.</param>
+        /// <param name="aPlayerNum">Player number '0' or '1'.</param>
+        public Player(double aXLocation, double aYLocation, double aSpeed, int aHp, int aPlayerNum) : base(aXLocation, aYLocation, aSpeed, aHp)
+        {
+            _score = 0;
+            _controlDirection = 0;
+            _playerNum = aPlayerNum;
+        }
+        /// <summary>
+        /// Update players position.
+        /// </summary>
+        public override void Move ()
 		{
 			if (_controlDirection == 1) //left
 				XLocation -= Speed;
