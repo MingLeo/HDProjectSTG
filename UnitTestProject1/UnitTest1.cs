@@ -943,21 +943,6 @@ namespace UnitTestProject1
         }
 
         [Test]
-        public void Test_Utility_CheckGameStatus_IsEnd_false_()
-        {
-            Utility.GameController = new Controller();
-            Utility.GameController.DeployedObjects();
-            Utility.GameController.Player1.Clear();
-            Utility.GameController.EnemiesCircular.Clear();
-            Assert.AreEqual(Utility.GameController.CheckGameState(), GameState.Continue);
-            Assert.AreEqual(false, Utility.GameController.CheckEndGame());
-            Assert.AreNotEqual(true, Utility.GameController.CheckEndGame());
-            Assert.AreEqual(false, Utility.CheckGameStatus());
-            Utility.GameController.CleanObjects();
-            Utility.GameController = null;
-        }
-
-        [Test]
         public void Test_Utility_CheckGameStatus_IsEnd_true_Player0Win()
         {
             Utility.GameController = new Controller();
@@ -974,15 +959,16 @@ namespace UnitTestProject1
         }
 
         [Test]
-        public void Test_Utility_CheckGameStatus_IsEnd_true_BothWin()
+        public void Test_Utility_CheckGameStatus_IsEnd_false_()
         {
             Utility.GameController = new Controller();
             Utility.GameController.DeployedObjects();
+            Utility.GameController.Player1.Clear();
             Utility.GameController.EnemiesCircular.Clear();
-            Utility.GameController.EnemiesLinear.Clear();
-            Assert.AreEqual(Utility.GameController.CheckGameState(), GameState.BothWin);
-            Assert.AreEqual(true, Utility.GameController.CheckEndGame());
-            Assert.AreNotEqual(false, Utility.GameController.CheckEndGame());
+            Assert.AreEqual(Utility.GameController.CheckGameState(), GameState.Continue);
+            Assert.AreEqual(false, Utility.GameController.CheckEndGame());
+            Assert.AreNotEqual(true, Utility.GameController.CheckEndGame());
+            Assert.AreEqual(false, Utility.CheckGameStatus());
             Utility.GameController.CleanObjects();
             Utility.GameController = null;
         }
@@ -994,6 +980,20 @@ namespace UnitTestProject1
             Utility.GameController.DeployedObjects();
             Utility.GameController.CleanObjects();
             Assert.AreEqual(Utility.GameController.CheckGameState(), GameState.BothLose);
+            Assert.AreEqual(true, Utility.GameController.CheckEndGame());
+            Assert.AreNotEqual(false, Utility.GameController.CheckEndGame());
+            Utility.GameController.CleanObjects();
+            Utility.GameController = null;
+        }
+
+        [Test]
+        public void Test_Utility_CheckGameStatus_IsEnd_true_BothWin()
+        {
+            Utility.GameController = new Controller();
+            Utility.GameController.DeployedObjects();
+            Utility.GameController.EnemiesCircular.Clear();
+            Utility.GameController.EnemiesLinear.Clear();
+            Assert.AreEqual(Utility.GameController.CheckGameState(), GameState.BothWin);
             Assert.AreEqual(true, Utility.GameController.CheckEndGame());
             Assert.AreNotEqual(false, Utility.GameController.CheckEndGame());
             Utility.GameController.CleanObjects();
