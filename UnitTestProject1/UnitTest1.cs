@@ -16,6 +16,28 @@ namespace UnitTestProject1
         Explosion espl = new Explosion(1, 1, 1);
         Weapon wp = new Weapon(1, 1, 1, 1, BitmapKind.BulletA, 1);
 
+
+
+        [Test]
+        public void Test_EnemyCircular_Move_X()
+        {
+            EnemyCircular ec = new EnemyCircular(20, 20, 2, 20);
+            ec.MovePattern(2, 2, 2, 2, 2, 2);
+            ec.Move();
+            Assert.AreEqual(ec.XLocation, 2 + 2 * 2 * Math.Sin(0) * 2);
+            Assert.AreNotEqual(ec.XLocation, 2 + 2 * 2 * Math.Sin(1) * 2);
+        }
+
+        [Test]
+        public void Test_EnemyCircular_Move_Y()
+        {
+            EnemyCircular ec = new EnemyCircular(20, 20, 2, 20);
+            ec.MovePattern(2, 2, 2, 2, 2, 2);
+            ec.Move();
+            Assert.AreEqual(ec.YLocation, 2 + 2 * 2 * Math.Cos(0) * 2);
+            Assert.AreNotEqual(ec.YLocation, 2 + 2 * 2 * Math.Cos(1) * 2);
+        }
+
         [Test]
         public void Test_New_EnemyCircular_X()
         {
