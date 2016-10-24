@@ -52,27 +52,24 @@ namespace MyGame
         /// Deployeds the objects.
         /// Add 2 players, 3 items and 6 enemies of both kinds.
         /// </summary>
-        public void DeployedObjects(){
-			Player0.Add (new Player (100, 200, 10, 5,0));
-			Player1.Add (new Player (100, 600, 10, 5,1));
-
-			EnemiesLinear.Add (new EnemyLinear (_rand.Next (500, 1100), _rand.Next (100, 650),1,3));
-			EnemiesLinear.Add (new EnemyLinear (_rand.Next (500, 1100), _rand.Next (50, 700), 2, 4));
-			EnemiesLinear.Add (new EnemyLinear (_rand.Next (500, 1100), _rand.Next (100, 650), 5, 7));
-
-			EnemiesCircular.Add (new EnemyCircular (_rand.Next (500, 1100), _rand.Next (50, 750), 4, 3));
-			EnemiesCircular.Add (new EnemyCircular (_rand.Next (500, 1100), _rand.Next (50, 750), 6,5));
-			EnemiesCircular.Add (new EnemyCircular (_rand.Next (500, 1100), _rand.Next (50, 750), 4, 3));
-
-			ItemsF.Add (new ItemFire(_rand.Next (400, 1100),_rand.Next (100, 700),1));
-			ItemsF.Add (new ItemFire (_rand.Next (400, 1100), _rand.Next (100, 700), 2));
-			ItemsF.Add (new ItemFire (_rand.Next (400, 1100), _rand.Next (100, 700), 3));
-		}
-
-		/// <summary>
-		/// Equips the players and enemies' moving patterns and weapons.
-		/// </summary>
-		public void EquipObjects()
+        public void DeployedObjects()
+        {
+            Player0.Add(new Player(100, 200, 10, 5, 0));
+            Player1.Add(new Player(100, 600, 10, 5, 1));
+            EnemiesLinear.Add(new EnemyLinear(_rand.Next(500, 1100), _rand.Next(100, 650), 1, 3));
+            EnemiesLinear.Add(new EnemyLinear(_rand.Next(500, 1100), _rand.Next(50, 700), 2, 4));
+            EnemiesLinear.Add(new EnemyLinear(_rand.Next(500, 1100), _rand.Next(100, 650), 5, 7));
+            EnemiesCircular.Add(new EnemyCircular(_rand.Next(500, 1100), _rand.Next(50, 750), 4, 3));
+            EnemiesCircular.Add(new EnemyCircular(_rand.Next(500, 1100), _rand.Next(50, 750), 6, 5));
+            EnemiesCircular.Add(new EnemyCircular(_rand.Next(500, 1100), _rand.Next(50, 750), 4, 3));
+            ItemsF.Add(new ItemFire(_rand.Next(400, 1100), _rand.Next(100, 700), 1));
+            ItemsF.Add(new ItemFire(_rand.Next(400, 1100), _rand.Next(100, 700), 2));
+            ItemsF.Add(new ItemFire(_rand.Next(400, 1100), _rand.Next(100, 700), 3));
+        }
+        /// <summary>
+        /// Equips the players and enemies' moving patterns and weapons.
+        /// </summary>
+        public void EquipObjects()
 		{
 			Player0[0].Equip (0, 40, -5,1);
 			Player1 [0].Equip (0, 40, -5, 1);
