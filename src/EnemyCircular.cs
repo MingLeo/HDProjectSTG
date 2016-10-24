@@ -142,9 +142,6 @@ namespace MyGame
 			DirectionX = directionX;
 			DirectionY = directionY;
 		}
-
-
-
 		/// <summary>
 		/// Update enemy position.
 		/// Elliptical movement.
@@ -155,7 +152,6 @@ namespace MyGame
 			YLocation = CentreY + DirectionY * RadiusY * Math.Cos (Angle)*Speed;
 			Angle += Speed/1000;
 		}
-
 		/// <summary>
 		/// Draw this enemy.
 		/// </summary>
