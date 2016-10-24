@@ -116,20 +116,20 @@ namespace MyGame
 			}
 		}
 
-		/// <summary>
-		/// Lets players and enemies fire their bullets.
-		/// </summary>
-		public void FireObjects ()
-		{
-			foreach (Player p0 in Player0)
-				p0.Fire (0);
-			foreach (Player p1 in Player1)
-				p1.Fire (1);
-			foreach (EnemyLinear eneL in EnemiesLinear) 
-				eneL.Fire (-1);
-			foreach (EnemyCircular eneC in EnemiesCircular)
-				eneC.Fire (-1);
-		}
+        /// <summary>
+        /// Lets players and enemies fire their bullets.
+        /// </summary>
+        public void FireObjects()
+        {
+            foreach (Player p0 in Player0)
+                p0.Fire(0);
+            foreach (Player p1 in Player1)
+                p1.Fire(1);
+            foreach (EnemyLinear eneL in EnemiesLinear)
+                eneL.Fire(-1);
+            foreach (EnemyCircular eneC in EnemiesCircular)
+                eneC.Fire(-1);
+        }
 
         /// <summary>
         /// Move and clean any moving objects
