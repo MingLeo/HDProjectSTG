@@ -10,7 +10,20 @@ namespace MyGame
 	{
 		private static Controller gameController;
 
-		public static void DefaultScreen()
+        public static Controller GameController
+        {
+            get
+            {
+                return gameController;
+            }
+
+            set
+            {
+                gameController = value;
+            }
+        }
+
+        public static void DefaultScreen()
 		{
 			SwinGame.OpenGraphicsWindow ("GameMain", 1200, 800);
 			SwinGame.ProcessEvents ();
@@ -20,7 +33,7 @@ namespace MyGame
 		{
 			SwinGame.ProcessEvents ();
 			SwinGame.ClearScreen (Color.White);
-			gameController.DrawMenu ();
+			GameController.DrawMenu ();
 			SwinGame.RefreshScreen (60);
 		}
 
@@ -28,63 +41,63 @@ namespace MyGame
 		{
 			SwinGame.ProcessEvents ();
 			SwinGame.ClearScreen (Color.White);
-			gameController.DrawResult ();
+			GameController.DrawResult ();
 			SwinGame.RefreshScreen (60);
 		}
 
 		public static void ClearGame(){
-			gameController.CleanObjects ();
+			GameController.CleanObjects ();
 		}
 
 		public static void InitiliseGameController()
 		{
-			gameController = new Controller ();
-			gameController.LoadResources ();
-			gameController.LoadHighScore ();
+			GameController = new Controller ();
+			GameController.LoadResources ();
+			GameController.LoadHighScore ();
 		}
 
 		public static void CreateObjects()
 		{
 			SwinGame.ProcessEvents ();
 			SwinGame.ClearScreen (Color.White);
-			gameController.DeployedObjects ();
-			gameController.EquipObjects ();
+			GameController.DeployedObjects ();
+			GameController.EquipObjects ();
 		}
 
 		public static void CheckCollision()
 		{
-			gameController.CollisionPlayerVsEnemy ();
-			gameController.CollisionEnemyVsBullet ();
-			gameController.CollisionPlayerVsBullet ();
-			gameController.CheckItemCollsion ();
+			GameController.CollisionPlayerVsEnemy ();
+			GameController.CollisionEnemyVsBullet ();
+			GameController.CollisionPlayerVsBullet ();
+			GameController.CheckItemCollsion ();
 		}
 
 		public static void DrawGame()
 		{
 			SwinGame.ProcessEvents ();
 			SwinGame.ClearScreen (Color.White);
-			gameController.MoveObjects ();
-			gameController.DrawObjects ();
-			gameController.DrawHUD ();
-			gameController.FireObjects ();
+			GameController.MoveObjects ();
+			GameController.DrawObjects ();
+			GameController.DrawHUD ();
+			GameController.FireObjects ();
 
 		}
 
 		public static bool CheckGameStatus()
 		{
-			gameController.UpdateScore ();
-			gameController.CheckAlive ();
-			bool isEnd = gameController.CheckEndGame ();
+			GameController.UpdateScore ();
+			GameController.CheckAlive ();
+			bool isEnd = GameController.CheckEndGame ();
 			return isEnd;
 		}
 
 		public static void GameControl()
 		{
 			SwinGame.ProcessEvents ();
-			if (gameController.Player0.Count != 0)
-				gameController.ControlWASD ();
-			if (gameController.Player1.Count != 0)
-				gameController.ControlUDLR ();
+			if (GameController.Player0.Count != 0)
+				GameController.ControlWASD ();
+			if (GameController.Player1.Count != 0)
+				GameController.ControlUDLR ();
 		}
 
 
