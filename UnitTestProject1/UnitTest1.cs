@@ -926,11 +926,6 @@ namespace UnitTestProject1
             Assert.AreNotEqual(Utility.GameController.Explosions.Count, 2);
             Utility.GameController.ItemsF.Add(new ItemFire(1, 1, 1));
             Utility.ClearGame();
-            Assert.AreEqual(Utility.GameController.Explosions.Count, 0);
-            Assert.AreNotEqual(Utility.GameController.Explosions.Count, 1);
-            Assert.AreEqual(Utility.GameController.Player0.Count, 0);
-            Assert.AreNotEqual(Utility.GameController.Player0.Count, 1);
-            Assert.AreEqual(Utility.GameController.Player1.Count, 0);
             Assert.AreNotEqual(Utility.GameController.Player1.Count, 1);
             Assert.AreEqual(Utility.GameController.ItemsF.Count, 0);
             Assert.AreNotEqual(Utility.GameController.ItemsF.Count, 1);
@@ -938,6 +933,11 @@ namespace UnitTestProject1
             Assert.AreNotEqual(Utility.GameController.EnemiesCircular.Count, 1);
             Assert.AreEqual(Utility.GameController.EnemiesLinear.Count, 0);
             Assert.AreNotEqual(Utility.GameController.EnemiesLinear.Count, 1);
+            Assert.AreEqual(Utility.GameController.Explosions.Count, 0);
+            Assert.AreNotEqual(Utility.GameController.Explosions.Count, 1);
+            Assert.AreEqual(Utility.GameController.Player0.Count, 0);
+            Assert.AreNotEqual(Utility.GameController.Player0.Count, 1);
+            Assert.AreEqual(Utility.GameController.Player1.Count, 0);
             Utility.GameController.CleanObjects();
             Utility.GameController = null;
         }
