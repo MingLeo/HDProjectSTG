@@ -51,18 +51,17 @@ namespace MyGame
 		{
 			
 		}
-		/// <summary>
-		/// Ship moves on a straight line.
-		/// Interface's method
-		/// </summary>
-		/// <param name="aPeriod">Movement period.</param>
-		/// <param name="aDirection">Movement direction.</param>
-		public void MovePattern (int aPeriod, int aDirection)
-		{
-			Period = aPeriod;
-			Direction = aDirection;
-		}
-
+        /// <summary>
+        /// Ship moves on a straight line.
+        /// Interface's method
+        /// </summary>
+        /// <param name="aPeriod">Movement period.</param>
+        /// <param name="aDirection">Movement direction.</param>
+        public void MovePattern(int aPeriod, int aDirection)
+        {
+            Period = aPeriod;
+            Direction = aDirection;
+        }
         /// <summary>
         /// Update enemy position.
         /// Ship patrons periodically on a straight line.
