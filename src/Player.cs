@@ -32,28 +32,27 @@ namespace MyGame
         /// <summary>
         /// Update players position.
         /// </summary>
-        public override void Move ()
-		{
-			if (_controlDirection == 1) //left
-				XLocation -= Speed;
-			if (_controlDirection == 2) //right
-				XLocation += Speed;
-			if (_controlDirection == 3) //up
-				YLocation -= Speed;
-			if (_controlDirection == 4) // down
-				YLocation += Speed;
-
-			_controlDirection = 0;
-		}
-		/// <summary>
-		/// Fire the bullets.
-		/// Players have 4 types of weapon depends on equiped _bulletType.
-		/// '0' - single. '1' - double. '2' - triple. '3' - quintuple
-		/// Each player has different bullet color depends on belongTo
-		/// '0' - Blue. '1' - Red. 
-		/// </summary>
-		/// <param name="belongTo">Player number, '0' or '1'.</param>
-		public override void Fire (int belongTo)
+        public override void Move()
+        {
+            if (_controlDirection == 1) //left
+                XLocation -= Speed;
+            if (_controlDirection == 2) //right
+                XLocation += Speed;
+            if (_controlDirection == 3) //up
+                YLocation -= Speed;
+            if (_controlDirection == 4) // down
+                YLocation += Speed;
+            _controlDirection = 0;
+        }
+        /// <summary>
+        /// Fire the bullets.
+        /// Players have 4 types of weapon depends on equiped _bulletType.
+        /// '0' - single. '1' - double. '2' - triple. '3' - quintuple
+        /// Each player has different bullet color depends on belongTo
+        /// '0' - Blue. '1' - Red. 
+        /// </summary>
+        /// <param name="belongTo">Player number, '0' or '1'.</param>
+        public override void Fire (int belongTo)
 		{
 			BitmapKind bmk=BitmapKind.BulletA;
 			if (belongTo == 1)
