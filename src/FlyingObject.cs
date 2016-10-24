@@ -37,26 +37,27 @@ namespace MyGame
 			_speed = aSpeed;
 		}
 
-        /// <summary>
-        /// Equip ship's weapons.
-        /// </summary>
-        /// <param name="aBulletType">Ship's bullet type.</param>
-        /// <param name="aFireRate">Ship's fire rate.</param>
-        /// <param name="aBulletSpeed">Ship's bullet speed.</param>
-        /// <param name="aFirePower">Ship's fire power.</param>
-        public void Equip(int aBulletType, int aFireRate, double aBulletSpeed, int aFirePower)
-        {
-            _fireRate = aFireRate;
-            _bulletSpeed = aBulletSpeed;
-            _bulletType = aBulletType;
-            _firePower = aFirePower;
-        }
-        /// <summary>
-        /// Fire Bullets.
-        /// Abstract method.
-        /// </summary>
-        /// <param name="belongTo">Player '0' or '1' or '2'.</param>
-        public abstract void Fire (int belongTo);
+		/// <summary>
+		/// Equip ship's weapons.
+		/// </summary>
+		/// <param name="aBulletType">Ship's bullet type.</param>
+		/// <param name="aFireRate">Ship's fire rate.</param>
+		/// <param name="aBulletSpeed">Ship's bullet speed.</param>
+		/// <param name="aFirePower">Ship's fire power.</param>
+		public void Equip (int aBulletType, int aFireRate, double aBulletSpeed, int aFirePower)
+		{
+			_fireRate = aFireRate;
+			_bulletSpeed = aBulletSpeed;
+			_bulletType = aBulletType;
+			_firePower = aFirePower;
+		}
+
+		/// <summary>
+		/// Fire Bullets.
+		/// Abstract method.
+		/// </summary>
+		/// <param name="belongTo">Player '0' or '1' or '2'.</param>
+		public abstract void Fire (int belongTo);
 
 		/// <summary>
 		/// Move this ship.

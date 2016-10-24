@@ -46,41 +46,42 @@ namespace MyGame
         /// <param name="aYLocation">Enemy's A Y Location.</param>
         /// <param name="aSpeed">Enemy's speed.</param>
         /// <param name="aHp">Enemy's hp.</param>
-        public EnemyLinear(double aXLocation, double aYLocation, double aSpeed, int aHp) : base(aXLocation, aYLocation, aSpeed, aHp)
-        {
-        }
-        /// <summary>
-        /// Ship moves on a straight line.
-        /// Interface's method
-        /// </summary>
-        /// <param name="aPeriod">Movement period.</param>
-        /// <param name="aDirection">Movement direction.</param>
-        public void MovePattern(int aPeriod, int aDirection)
-        {
-            Period = aPeriod;
-            Direction = aDirection;
-        }
-        /// <summary>
-        /// Update enemy position.
-        /// Ship patrons periodically on a straight line.
-        /// </summary>
+        public EnemyLinear (double aXLocation, double aYLocation, double aSpeed, int aHp)
+			: base (aXLocation, aYLocation, aSpeed, aHp)
+		{
+			
+		}
+		/// <summary>
+		/// Ship moves on a straight line.
+		/// Interface's method
+		/// </summary>
+		/// <param name="aPeriod">Movement period.</param>
+		/// <param name="aDirection">Movement direction.</param>
+		public void MovePattern (int aPeriod, int aDirection)
+		{
+			Period = aPeriod;
+			Direction = aDirection;
+		}
 
-        public override void Move()
-        {
-            _timerCount++;
-            if (_timerCount > Period)
-            {
-                _timerCount = 0;
-                Direction = -Direction;
-            }
-            YLocation += Direction * Speed;
+		/// <summary>
+		/// Update enemy position.
+		/// Ship patrons periodically on a straight line.
+		/// </summary>
+		public override void Move ()
+		{
+			_timerCount++;
+			if (_timerCount > Period) 
+			{
+				_timerCount = 0;
+				Direction = - Direction;
+			}
+			YLocation += Direction * Speed;
             XLocation += Direction * Speed;
         }
-
-        /// <summary>
-        /// Draw this enemy.
-        /// </summary>
-        public override void Draw ()
+		/// <summary>
+		/// Draw this enemy.
+		/// </summary>
+		public override void Draw ()
 		{
 			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.EnemyLin), (float)XLocation, (float)YLocation);
 		}

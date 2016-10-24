@@ -117,21 +117,21 @@ namespace MyGame
         /// <param name="aYLocation">Enemy's A Y Location.</param>
         /// <param name="aSpeed">Enemy's speed.</param>
         /// <param name="aHp">Enemy's hp.</param>
-        public EnemyCircular(double aXLocation, double aYLocation, double aSpeed, int aHp)
-            : base(aXLocation, aYLocation, aSpeed, aHp)
-        {
-        }
-        /// <summary>
-        /// Ship moves on a curve.
-        /// Interface's methods
-        /// </summary>
-        /// <param name="aCentreX">Curve centre x.</param>
-        /// <param name="aCentreY">Curve centre y.</param>
-        /// <param name="aRadiusX">Curve radius x.</param>
-        /// <param name="aRadiusY">Curve radius y.</param>
-        /// <param name="directionX">Horizontal Direction.</param>
-        /// <param name="directionY">Vertical Direction.</param>
-        public void MovePattern(double aCentreX, double aCentreY, double aRadiusX, double aRadiusY, int directionX, int directionY)
+        public EnemyCircular (double aXLocation, double aYLocation, double aSpeed, int aHp)
+			: base (aXLocation, aYLocation, aSpeed, aHp)
+		{
+		}
+		/// <summary>
+		/// Ship moves on a curve.
+		/// Interface's methods
+		/// </summary>
+		/// <param name="aCentreX">Curve centre x.</param>
+		/// <param name="aCentreY">Curve centre y.</param>
+		/// <param name="aRadiusX">Curve radius x.</param>
+		/// <param name="aRadiusY">Curve radius y.</param>
+		/// <param name="directionX">Horizontal Direction.</param>
+		/// <param name="directionY">Vertical Direction.</param>
+		public void MovePattern(double aCentreX, double aCentreY, double aRadiusX, double aRadiusY, int directionX, int directionY)
 		{
 			Angle = 0;
 			RadiusX = aRadiusX;
@@ -141,6 +141,9 @@ namespace MyGame
 			DirectionX = directionX;
 			DirectionY = directionY;
 		}
+
+
+
 		/// <summary>
 		/// Update enemy position.
 		/// Elliptical movement.
@@ -151,6 +154,7 @@ namespace MyGame
 			YLocation = CentreY + DirectionY * RadiusY * Math.Cos (Angle)*Speed;
 			Angle += Speed/1000;
 		}
+
 		/// <summary>
 		/// Draw this enemy.
 		/// </summary>
