@@ -18,7 +18,7 @@ namespace UnitTestProject1
 
             testController.CheckAlive();
 
-            Assert.AreEqual(testController.Player0.Count, 1);
+            Assert.AreEqual(testController.Player0.Count, 0);
 
         }
 
