@@ -155,7 +155,7 @@ namespace MyGame
         {
             if (Player0.Count != 0)
             {
-                if (Player0[0].Hp <= 0)
+                if (Player0[0].Hp == 0)
                 {
                     Player0[0].Score -= 2;
                     Player0.RemoveAt(0);
@@ -163,7 +163,7 @@ namespace MyGame
             }
             if (Player1.Count != 0)
             {
-                if (Player1[0].Hp <= 0)
+                if (Player1[0].Hp == 0)
                 {
                     Player1[0].Score -= 2;
                     Player1.RemoveAt(0);
