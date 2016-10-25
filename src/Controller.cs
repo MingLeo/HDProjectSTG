@@ -268,7 +268,7 @@ namespace MyGame
 		}
 
 		/// <summary>
-		/// Check for collisions between enemies and bullets.
+		/// Check for collisions between enemies and bullets. Need to debug!
 		/// </summary>
 		public void CollisionEnemyVsBullet()
 		{
