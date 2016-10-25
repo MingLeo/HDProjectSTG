@@ -63,25 +63,25 @@ namespace MyGame
 			Direction = aDirection;
 		}
 
-		/// <summary>
-		/// Update enemy position.
-		/// Ship patrons periodically on a straight line.
-		/// </summary>
-		public override void Move ()
-		{
-			_timerCount++;
-			if (_timerCount > Period) 
-			{
-				_timerCount = 0;
-				Direction = - Direction;
-			}
-			YLocation += Direction * Speed;
+        /// <summary>
+        /// Update enemy position.
+        /// Ship patrons periodically on a straight line.
+        /// </summary>
+        public override void Move()
+        {
+            _timerCount++;
+            if (_timerCount > Period)
+            {
+                _timerCount = 0;
+                Direction = -Direction;
+            }
+            YLocation += Direction * Speed;
             XLocation += Direction * Speed;
         }
-		/// <summary>
-		/// Draw this enemy.
-		/// </summary>
-		public override void Draw ()
+        /// <summary>
+        /// Draw this enemy.
+        /// </summary>
+        public override void Draw ()
 		{
 			SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.EnemyLin), (float)XLocation, (float)YLocation);
 		}
