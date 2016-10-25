@@ -110,10 +110,6 @@ namespace MyGame
 			if (GameController.Player1.Count != 0)
 				GameController.ControlUDLR ();
 		}
-
-
-
-
 	}
 }
 
