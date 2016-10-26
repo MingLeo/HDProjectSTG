@@ -272,44 +272,51 @@ namespace MyGame
 		/// </summary>
 		public void CollisionEnemyVsBullet()
 		{
-			for (int i = 0; i < InGameBullets.GamePlayerWeapon.Count; i++) {
-				for (int j = 0; j < EnemiesCircular.Count; j++) {
-					if (SwinGame.BitmapCollision (Controller.GetBitMap (InGameBullets.GamePlayerWeapon [i].BulletKind),(int)InGameBullets.GamePlayerWeapon [i].XLocation,(int)InGameBullets.GamePlayerWeapon [i].YLocation,
-												  Controller.GetBitMap (BitmapKind.EnemyCir),(int)EnemiesCircular [j].XLocation,(int)EnemiesCircular [j].YLocation)) 
-					{
-						Explosions.Add (new Explosion (InGameBullets.GamePlayerWeapon [i].XLocation, InGameBullets.GamePlayerWeapon [i].YLocation, 40));
-						SwinGame.PlaySoundEffect ("Bang");
+            try {
+                for (int i = 0; i < InGameBullets.GamePlayerWeapon.Count; i++)
+                {
+                    for (int j = 0; j < EnemiesCircular.Count; j++)
+                    {
+                        if (SwinGame.BitmapCollision(Controller.GetBitMap(InGameBullets.GamePlayerWeapon[i].BulletKind), (int)InGameBullets.GamePlayerWeapon[i].XLocation, (int)InGameBullets.GamePlayerWeapon[i].YLocation,
+                                                      Controller.GetBitMap(BitmapKind.EnemyCir), (int)EnemiesCircular[j].XLocation, (int)EnemiesCircular[j].YLocation))
+                        {
+                            Explosions.Add(new Explosion(InGameBullets.GamePlayerWeapon[i].XLocation, InGameBullets.GamePlayerWeapon[i].YLocation, 40));
+                            SwinGame.PlaySoundEffect("Bang");
 
-						if (InGameBullets.GamePlayerWeapon [i].BelongTo ==0)
-							if (Player0.Count != 0) 
-								Player0[0].Score += 2;
-						if (InGameBullets.GamePlayerWeapon [i].BelongTo == 1)
-							if (Player1.Count != 0) 
-								Player1[0].Score += 2;
+                            if (InGameBullets.GamePlayerWeapon[i].BelongTo == 0)
+                                if (Player0.Count != 0)
+                                    Player0[0].Score += 2;
+                            if (InGameBullets.GamePlayerWeapon[i].BelongTo == 1)
+                                if (Player1.Count != 0)
+                                    Player1[0].Score += 2;
 
-						EnemiesCircular [j].Hp -= InGameBullets.GamePlayerWeapon [i].BulletPower;
-						InGameBullets.GamePlayerWeapon.RemoveAt (i);
-					}
-				}
-				for (int j = 0; j < EnemiesLinear.Count; j++) {
-					if (SwinGame.BitmapCollision (Controller.GetBitMap (InGameBullets.GamePlayerWeapon [i].BulletKind),(int)InGameBullets.GamePlayerWeapon [i].XLocation,(int)InGameBullets.GamePlayerWeapon [i].YLocation,
-												  Controller.GetBitMap (BitmapKind.EnemyLin),(int)EnemiesLinear [j].XLocation,(int)EnemiesLinear [j].YLocation)) 
-					{
-						Explosions.Add (new Explosion (InGameBullets.GamePlayerWeapon [i].XLocation, InGameBullets.GamePlayerWeapon [i].YLocation, 40));
-						SwinGame.PlaySoundEffect ("Bang");
+                            EnemiesCircular[j].Hp -= InGameBullets.GamePlayerWeapon[i].BulletPower;
+                            InGameBullets.GamePlayerWeapon.RemoveAt(i);
+                        }
+                    }
+                    for (int j = 0; j < EnemiesLinear.Count; j++)
+                    {
+                        if (SwinGame.BitmapCollision(Controller.GetBitMap(InGameBullets.GamePlayerWeapon[i].BulletKind), (int)InGameBullets.GamePlayerWeapon[i].XLocation, (int)InGameBullets.GamePlayerWeapon[i].YLocation,
+                                                      Controller.GetBitMap(BitmapKind.EnemyLin), (int)EnemiesLinear[j].XLocation, (int)EnemiesLinear[j].YLocation))
+                        {
+                            Explosions.Add(new Explosion(InGameBullets.GamePlayerWeapon[i].XLocation, InGameBullets.GamePlayerWeapon[i].YLocation, 40));
+                            SwinGame.PlaySoundEffect("Bang");
 
-						if (InGameBullets.GamePlayerWeapon [i].BelongTo == 0)
-							if (Player0.Count != 0)
-								Player0 [0].Score += 2;
-						if (InGameBullets.GamePlayerWeapon [i].BelongTo == 1)
-							if (Player1.Count != 0)
-								Player1 [0].Score += 2;
+                            if (InGameBullets.GamePlayerWeapon[i].BelongTo == 0)
+                                if (Player0.Count != 0)
+                                    Player0[0].Score += 2;
+                            if (InGameBullets.GamePlayerWeapon[i].BelongTo == 1)
+                                if (Player1.Count != 0)
+                                    Player1[0].Score += 2;
 
-						EnemiesLinear [j].Hp -= InGameBullets.GamePlayerWeapon [i].BulletPower;
-						InGameBullets.GamePlayerWeapon.RemoveAt (i);
-					}
-				}
-			}
+                            EnemiesLinear[j].Hp -= InGameBullets.GamePlayerWeapon[i].BulletPower;
+                            InGameBullets.GamePlayerWeapon.RemoveAt(i);
+                        }
+                    }
+                }
+            }catch(Exception)
+            { }
+            finally { }
 		}
 
 		/// <summary>
